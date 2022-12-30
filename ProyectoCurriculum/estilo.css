@@ -33,7 +33,7 @@ nav a{
 }
 
 section{
-    height: 100vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
 
@@ -47,19 +47,18 @@ section h3{
     width: 20%;
     background-color: coral;
 }
-
-nav li{
-    display: inline;
-}
-
 button.btn_Proyecto{
     margin-top: 20%;
     height: 20%;
     width:  20%;
 }
-section p{
-    display: block;
 
+section p img
+{
+    align-items: flex-end;
+    display: inline-block;
+    height:  15%;
+    width: 15%;
 }
 
 

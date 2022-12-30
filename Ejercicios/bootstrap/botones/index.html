@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+        crossorigin="anonymous">
+</head>
+<body>
+    <!-- 
+        btn-lg: pone el boton en grande
+        hace falta la clase btn para que me los tome como botones
+        btn-primary es uno de los tipos de botones
+        btn-block hace que sea del tipo blque en vez de elemento de linea
+        active: simula que estas haciend click-> fue reemplazado por d-grid gap-2(el 2 es el numero de espacio entre los botones )
+        offset-n: me hace n columnas vacias de modo que puedo ubicar mejor el contenido
+        https://picsum.photos/200/360 permite generar imganes de relleno como el lorem, en la primera barra es el height y la 
+        segunda el widht
+        clase  rounded me pone la imagen con bordes redondeados
+        rounded-circle la imagen queda en un circulo
+        img-fluid: hace que la imagen sea fluida
+    -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-lg btn-default btn-block">Default</button>
+                <button class="btn btn-sm btn-primary btn-block">Primary</button>
+                <button class="btn btn-xs btn-success btn-block">Succces</button>
+                <button class="btn btn-info btn-block">Info</button>
+                <button class="btn btn-warning btn-block">Warning</button>
+                <button class="btn btn-lg btn-danger btn-block">Danger</button>
+                <button class="btn btn-link btn-block">Link</button>
+                <img src="https://picsum.photos/200/360" alt="" class="img img-fluid"> 
+                <img src="https://picsum.photos/250/360" alt="" class="rounded img-fluid"> 
+                <img src="https://picsum.photos/300/360" alt="" class="rounded-circle img-fluid"> 
+            </div>
+
+            <div class="col-md-3 d-grid gap-1 offset-2">
+                <button class="btn btn-lg btn-default active">Default</button>
+                <button class="btn btn-sm btn-primary active">Primary</button>
+                <button class="btn btn-xs btn-success active">Succces</button>
+                <button class="btn btn-info active">Info</button>
+                <button class="btn btn-warning active">Warning</button>
+                <button class="btn btn-lg btn-danger active">Danger</button>
+                <button class="btn btn-link active">Link</button>
+            </div>
+            <div class="col-md-4">
+                <a href="" class="" id="">Default</a>
+                <a href="" class="" id="">Primary</a>
+                <a href="" class="" id="">Succes</a>
+                <a href="" class="" id="">Warning</a>
+                <a href="" class="" id="">Danger</a>
+                <a href="" class="" id="">Link</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-gtEjrDSeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin= "anonymous"></script>
+</body>
+</html>

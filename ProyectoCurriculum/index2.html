@@ -4,12 +4,6 @@
 <head>
     <title>Curriculum Vitae</title>
     <meta charset="UTF-8"><!--que tipo de caracteres se van a utilizar-->
-
-    <style>
-        body{
-            background-color:lightpink;
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 
@@ -32,9 +26,9 @@
        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae velit possimus ducimus laudantium obcaecati quae at iusto praesentium nostrum? Facilis ullam cumque maxime cupiditate consequatur pariatur officia suscipit natus?
     </p>
         <ul>
-            <li ></li>
-            <li></li>
-            <li></li>
+            <li>elemento</li>
+            <li>elemento</li>
+            <li>elemento</li>
 
         </ul>
 
@@ -54,13 +48,18 @@
 
         <section id="Proyectos">
             <h3>Proyectos</h3>
-            <button class="btn_Proyecto" id="AntProyect" onclick="proyectoAnt">Anterior</button>
-            <p> <img src="" alt="imagen1"> 
-                <img src="" alt="imagen2"> 
-                <img src="" alt="imagen3"></p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque vitae consequuntur necessitatibus debitis, reprehenderit blanditiis beatae nisi nesciunt minus, odit enim! Ipsam debitis incidunt adipisci earum enim impedit autem odio!</p>
             
-            <button  class="btn_Proyecto" id="NextProyect" onclick="proyectoSgt">Siguente</button>
+                
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque vitae consequuntur necessitatibus debitis, 
+                reprehenderit blanditiis beatae nisi nesciunt minus, odit enim! Ipsam debitis incidunt adipisci earum enim impedit autem odio! <br>
+                <button class="btn_Proyecto" id="AntProyect" onclick="proyectoAnt()">Anterior</button>    
+                <img src="images/proyecto_1/2010_0014464_1200x1800.jpg" alt="imagen1" id="imgProyecto1"> 
+                <img src="images/proyecto_2/IMG_20200825_093301592.jpg" alt="imagen2" id="imgProyecto2"> 
+                <img src="images/proyecto_3/IMG_20200914_191512.jpg" alt="imagen3" id="imgProyecto3">
+                <button  class="btn_Proyecto" id="NextProyect" onclick="proyectoSgt()">Siguente</button>
+            </p>
+            
+            
             
         </section>
 

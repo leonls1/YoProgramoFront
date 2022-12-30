@@ -1,0 +1,21 @@
+
+
+#intro {
+    background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
+    height: 70vh;
+ 
+}
+
+#experiencia{
+    background-color: aqua;
+}
+#educacion{
+    background-color: aquamarine;
+}
+#habilidades{
+    background-color: bisque;
+}
+#proyectos{
+    background-color: azure;
+}
+
