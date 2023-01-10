@@ -10,6 +10,7 @@ import {Item} from '../../models/item'; //hago referencia a la clase que creee q
 export class ItemsComponent implements OnInit {
 
   items: Item[] = []; //inicializada con un arreglo vacio
+  total: number = 0; 
   
   constructor(){}
 
@@ -30,6 +31,23 @@ export class ItemsComponent implements OnInit {
         completed: false
       }
     ]
+
+    this.getTotal();
   }
 
+  deleteItem(item: Item){
+    this.items = this.items.filter( x => x.id !=  item.id); //devuelve todos los elementos cuyo id sea diferenete de ese item
+
+    this.getTotal();
+  }
+  toggleItem(item:Item){
+    this.getTotal();
+  }
+
+  getTotal(){
+    this.total = this.items.filter( item => !item.completed) //me devuelve los que no esten marcados como completos
+                            .map( item => item.quantity* item.price)
+                            .reduce( (acc, item) => acc += item,0);
+
+  }
 }
