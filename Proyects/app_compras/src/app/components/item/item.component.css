@@ -1,0 +1,53 @@
+.row { /* para que los items me los muestre parejo*/
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.row:hover{ /*it apply when you put the cursor over the element*/
+    border-radius: 3px; /* quite good these properties that allow me to see the how the line changes and notice  what element you are over*/
+    background-color: #ccc; 
+}
+
+.title{
+    display: flex; /*display flex porque ademas tiene el checkbox*/
+    width: 50%;
+    padding: 0 5px;
+}
+
+.price{
+    width: 15%;
+    padding: 0 5px;
+}
+
+.quantity{
+    width: 10%;
+    padding: 0 5px;
+}
+
+.total{
+    width: 15%;
+    font-weight: bolder;
+    color: green;
+    padding: 0 5px ;
+}
+
+.actions{
+    width: 10%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+div {
+    padding: 5px 0;
+}
+
+.completed{ /*cambia el color del texto una vez esta completado*/
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.completed .total {
+    color: #ccc;
+}
