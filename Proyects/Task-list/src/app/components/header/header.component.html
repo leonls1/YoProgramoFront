@@ -2,7 +2,10 @@
     <h1>{{title}}<!--here's one way binding because the information is going throw my component header
 to the template header-->
     </h1>
-    <app-button></app-button>
+    <app-button 
+    color="red" 
+    text="Add task"
+    (btnClick)="toggleAddTask()"></app-button>
 </header>
     
 

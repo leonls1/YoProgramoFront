@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 
 
 @Component({
@@ -7,13 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent implements OnInit {
+  @Input() text: string ="";
+  @Input() color: string="";
+  @Output() btnClick=new EventEmitter() //i'll need an output to comunicate with the header component
 
-  @Input() color:"string"='';
-  @Input() text:"string"='';
 
   constructor(){}
 
   ngOnInit(): void {}
+
+  onClick(){
+    this.btnClick.emit();
+  }
 
 
 }

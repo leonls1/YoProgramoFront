@@ -1,1 +1,10 @@
-<button class="btn">Click me!</button>
+<button 
+    class="btn" 
+    [ngStyle]="{'background-color': color}" 
+    (click)="onClick()"
+    
+    >   
+    {{text}}
+</button> <!--text is received from component ts 
+the background-color is aplied with [ngStyle] and received by parameter in the header.html-->
+ 
