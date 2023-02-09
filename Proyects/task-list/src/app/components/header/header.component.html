@@ -1,1 +1,9 @@
-<h1>{{title}}</h1> <!--one way binding; from component to the html-->
+<header>
+<h1>{{title}}
+    <app-button 
+    color="green" 
+    text="Add Task"
+    (btnClick)="toggleAddTask()"></app-button> <!--esta funcion que le envio al boton la defino en mi header-->
+</h1> <!--one way binding; from component to the html-->
+
+</header>

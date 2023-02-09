@@ -9,4 +9,8 @@ export class HeaderComponent {
 
   title : string = 'Task-list ';
 
+  toggleAddTask(){
+    console.log("usaste la funcion del header")
+  }
+
 }
