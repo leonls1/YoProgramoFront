@@ -33,4 +33,8 @@ export class TasksComponent implements OnInit   {
           })
         )) //estoy filtrando entonces el las tareas para sacar esa con el id borrado
   }
+
+  toggleReminder(task:Task){
+    task.reminder = !task.reminder //cambia el estado de reminder y por eso aplica o no la clase css
+  }
 }

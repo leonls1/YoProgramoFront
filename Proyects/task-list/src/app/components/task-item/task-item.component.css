@@ -7,7 +7,7 @@
 }
 
 .task.reminder{
-   border-left: 5px green ;
+   border-left: 5px solid green ; /*si reminder==true aplica la propiedad css*/
 }
 
 .task h3{
