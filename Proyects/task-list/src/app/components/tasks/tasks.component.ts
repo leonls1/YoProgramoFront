@@ -22,4 +22,8 @@ export class TasksComponent implements OnInit   {
      this.tasks=  tasks); //al iniciar se van a cargar las tareas ya que esta subscrito
     // a mi observable dentro del taskService para
   }
+
+  deleteTask(task:Task){ //al igual que todas las tareas lo voy a aplicar desde mi servicio
+    console.log("borrando una tarea en particular")
+  }
 }
