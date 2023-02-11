@@ -36,5 +36,6 @@ export class TasksComponent implements OnInit   {
 
   toggleReminder(task:Task){
     task.reminder = !task.reminder //cambia el estado de reminder y por eso aplica o no la clase css
+    this.taskService.updateTaskReminder(task).subscribe();
   }
 }
