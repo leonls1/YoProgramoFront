@@ -24,6 +24,13 @@ export class TasksComponent implements OnInit   {
   }
 
   deleteTask(task:Task){ //al igual que todas las tareas lo voy a aplicar desde mi servicio
-    console.log("borrando una tarea en particular")
+    //console.log("borrando una tarea en particular")
+    this.taskService.deleteTask(task)
+      .subscribe(
+        ()=>( //llamo al servicio ya que es el quien se encarga de los datos y su manejo
+        this.tasks = this.tasks.filter( (t) => {
+          return  t.id !== task.id
+          })
+        )) //estoy filtrando entonces el las tareas para sacar esa con el id borrado
   }
 }
