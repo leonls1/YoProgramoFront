@@ -38,4 +38,8 @@ export class TaskService {
     return this.http.put<Task>(url, task, {headers: {'Content-Type': 'application/json'}})
   }
 
+  addTask(task:Task): Observable<Task>{
+    return this.http.post<Task>(this.apiUrl, task, {headers: {'Content-Type': 'application/json'}})
+  }
+
 }

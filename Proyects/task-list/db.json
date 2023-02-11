@@ -23,6 +23,12 @@
       "text": "terminar desafio u5",
       "day": "14 de febrero 12:00 ",
       "reminder": true
+    },
+    {
+      "id": 10,
+      "text": "tarea nueva",
+      "day": "tarea",
+      "reminder": true
     }
   ]
 }
