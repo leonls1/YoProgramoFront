@@ -1,4 +1,8 @@
-<form action="add-form" (ngSubmit)="onSubmit()">
+<form 
+    action="add-form" 
+    (ngSubmit)="onSubmit()"
+    *ngIf="showAddTask" 
+    > <!--En el caso de que sea verdadero el showAddTask me va a mostrar todo el formulario para poder agregar una tarea-->
     <div class="form-control">
         <label for="text">Task</label>
         <input 

@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Task } from '../Task';
+import { Subscription } from 'rxjs';
+import { UiService } from 'src/app/service/ui.service';
 
 @Component({
   selector: 'app-add-task-v2.0',
@@ -9,10 +11,18 @@ import { Task } from '../Task';
 export class AddTaskV20Component {
   @Output() OnAddTask: EventEmitter<Task>= new EventEmitter();
 
+ 
   text: string ="";
   day: string = "";
   reminder: boolean=false;
-  constructor() {}
+  showAddTask: boolean = false;
+  subscription?  : Subscription; // al instanciar esto hago que pueda escuchar al servicio en este caso que esta utilizando la 
+  // variable 'showAddTask'
+
+  constructor(
+    private uiService: UiService //una vez importado un servicion tenes que crearlo con el constructor
+  ) {this.subscription = this.uiService.onToggle()
+    .subscribe(value => this.showAddTask = value)}
 
 
   onSubmit(){
