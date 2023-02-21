@@ -41,7 +41,7 @@ export class AddTaskV20Component {
 
     const {text, day,reminder} = this
     const newTask = {text, day, reminder}// no me funciona asi porque no se de donde sacar el id para meterlo, seria como
-    //autoincrement pero no puedo arora, lo dejo estatico
+    //autoincrement pero no puedo ahora, lo dejo estatico
 
     this.OnAddTask.emit(newTarea);
   }
