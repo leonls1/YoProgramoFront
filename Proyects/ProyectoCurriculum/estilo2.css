@@ -1,9 +1,6 @@
-
-
 #intro {
     background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
     height: 70vh;
- 
 }
 
 #experiencia{
@@ -19,3 +16,10 @@
     background-color: azure;
 }
 
+.img_perfil{}
+
+.img-yoprogramo{}
+
+.btn-LogIn{}
+
+.btn-Language{}
