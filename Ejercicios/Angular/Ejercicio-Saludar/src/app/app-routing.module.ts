@@ -6,6 +6,7 @@ import { ListaNombresV1Component } from './components/lista-nombres-v1/lista-nom
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListaContactosV2Component } from './components/lista-contactos-v2/lista-contactos-v2.component';
+import { ListaCrudComponent } from './components/lista-crud/lista-crud.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = // aca van todas las rutas
             {path : 'mostrarOcultar', component: MostrarOcultarComponent},
             {path : 'listaNombres', component: ListaNombresV1Component},
             {path : 'cambiarTitulo', component: HeaderComponent},
+            {path : 'ListasCRUD', component: ListaCrudComponent},
             {path : '**', redirectTo: 'home'}, // es aca que le indico en el caso que se ingrese una url
             // que no este listada me envie al home a home(header)
           ];
