@@ -1,0 +1,12 @@
+<h3>Lista de nombres</h3>
+
+<input type="text" #texto>
+<button (click)="anadirNombre(texto.value)">Añadir nombre</button>
+
+<ul>
+    <div *ngFor="let nom of nombres">
+        <li >{{nom}}</li>
+    </div>
+</ul>
+
+<a routerLink="/home">Inicio</a>

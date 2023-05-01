@@ -14,6 +14,7 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskV20Component } from './components/add-task-v2.0/add-task-v2.0.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ListaContactosV2Component } from './components/lista-contactos-v2/lista-contactos-v2.component';
 
 const appRoutes: Routes = [
   {path: '', component: TasksComponent}, //el camino vacion me lleva directo al componente Task
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     TaskItemComponent,
     AddTaskV20Component,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    ListaContactosV2Component
   ],
   imports: [
     BrowserModule,

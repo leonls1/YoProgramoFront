@@ -1,1 +1,11 @@
-<p>mostrar-ocultar works!</p>
+<a  (click)="mostrarOcultar()">{{mensaje_enlace}}</a>
+<!--es al momento de hacer click que llama a la funcion definida anteriormente  -->
+<div class=""  *ngIf="mostrar">
+    <p>
+        {{mensaje}} <!-- entonces arriba esta evaluando la variable que tengo declarada en el componente,
+        si se cumple muestra el mensaje-->
+    </p>
+</div>
+
+<p><a routerLink="/home">Inicio</a></p>
+
