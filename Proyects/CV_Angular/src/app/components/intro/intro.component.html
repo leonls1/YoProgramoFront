@@ -13,7 +13,8 @@
         class="btn btn-primary btn-LogIn"
         color=""
         texto="Ingresar"
-        (btnClick)="validar()">
+        (btnClick)="validar()"
+        >
         </app-button>
     </div>
 </div>
@@ -26,12 +27,13 @@
     <a href="#proyects" class="btn btn-primary">Proyectos </a>
     <a href="#contactInfo" class="btn btn-primary">Contacto </a>
   </nav></div>  
+
 <div class="header-about-me d-inline-flex">
 
     <div class="col-md-3 offset-1">
         <p><b>Acerca de mi</b></p>
-        <p >{{nombre}}</p>
-        <p >{{titulo}}</p>
+        <p >Nombre: {{nombre}}</p>
+        <p >Titulo: {{titulo}}</p>
         
     </div>
     <div class="col-7" id="intro-desc">
@@ -40,6 +42,7 @@
         texto="edit"
         color="yellow"
         [estado]=false
+        icon="bi bi-pencil"
         (btnClick)="enableEditing()"
     ></app-button>
         <p>{{descripcion}}

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-button',
@@ -10,7 +11,7 @@ export class ButtonComponent {
   @Input() color: string ="";
   @Input()  texto: string = "";
   @Input() icon: string = "";
-  @Input() estado: boolean = true;
+  @Input() estado: boolean = false;
   @Output() btnClick =new EventEmitter();
   
   onClick(){
