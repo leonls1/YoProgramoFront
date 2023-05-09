@@ -37,6 +37,8 @@ export class EmployeeListComponent {
       this.obtenerEmpleados();  //lo llamo para que me quede la lista atualizada})
     })}
 
+    
+
     detalleEmpleado(id:number){
       this.router.navigate(['detalle-empledo', id]);
     }

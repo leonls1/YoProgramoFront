@@ -1,34 +1,70 @@
 <div class="col-md-6 offset-md-3">
-  <h3 class="text-center">Actualizar empleado</h3>
-  <form action="" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+  <h3 class="text-center">Edicion de empleados</h3>
+  <form action="" (ngSubmit)="onSubmit()" #empleadoForm="ngForm">
+      <div class="form-group">
       <label>Nombre:</label>
       <input
-        type="text"
-        id="nombre"
-        class="form-control"
-        [(ngModel)]="empleado.nombre"
-        name="nombre"
+          type="text"
+          id="nombre"
+          class="form-control"
+          [(ngModel)]="empleado.nombre"
+          name="nombre"
+
+          required
+          placeholder="Ingrese su nombre"
+          minlength="4"
+          maxlength="10"
+          #nombre ="ngModel"
       />
+      <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+          <div *ngIf="nombre.errors" >
+              Digite su nombre por favor
+          </div> 
+      </div>
+      </div>
+      <div class="form-group">
       <!--asignando el ngModel a la variable nombre del empleando en mi componente-->
       <label>Apellido:</label>
       <input
-        type="text"
-        id="apellido"
-        class="form-control"
-        [(ngModel)]="empleado.apellido"
-        name="apellido"
+          type="text"
+          id="apellido"
+          class="form-control"
+          [(ngModel)]="empleado.apellido"
+          name="apellido"
+          
+          required
+          placeholder="Ingrese su apellido"
+          minlength="4"
+          maxlength="10"
+          #apellido ="ngModel"
       />
-
+      <div class="alert alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+          <div *ngIf="apellido.errors" >
+              Digite su apellido por favor
+          </div> 
+      </div>
+      </div>
+      <div class="form-group">
       <label>Email:</label>
       <input
-        type="text"
-        id="email"
-        class="form-control"
-        [(ngModel)]="empleado.email"
-        name="email"
+          type="text"
+          id="email"
+          class="form-control"
+          [(ngModel)]="empleado.email"
+          name="email"
+          
+          required
+          placeholder="Ingrese su email"
+          minlength="4"
+          maxlength="10"
+          #email ="ngModel"
       />
-    </div>
-    <button class="btn btn-success">Guardar</button>
+      <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors" >
+              Digite su email por favor
+          </div> 
+      </div>
+      </div>
+      <button class="btn btn-success" [disabled]="!empleadoForm.form.valid">Guardar</button>
   </form>
-</div>
+  </div>
