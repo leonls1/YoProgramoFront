@@ -25,4 +25,17 @@ export class EmployeeService {
     return this.httpClient.post(`${this.crearUrl}`, empleado) //fijate tambiem que cambia la url, 
     //estoy usando un post y ademas pasandole un empleado por parametro
   }
+
+  actualizarEmpleado(id:number, empleado: Employee): Observable<Object>{
+    return this.httpClient.put(`${this.baseUrl}/${id}`, empleado)
+  } 
+
+  obtenerEmpleadoPorId(id:number):Observable<Employee>{
+    return this.httpClient.get<Employee>(`${this.baseUrl}/${id}`);
+  }
+  
+  eliminarEmpleado(id:number):Observable<Object>{
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
+  }
+
 }
