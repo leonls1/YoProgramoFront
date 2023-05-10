@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,15 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule 
+    FormsModule,
+    NgCircleProgressModule.forRoot({ //valors por defecto
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    }) 
 
   ],
   providers: [],
