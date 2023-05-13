@@ -13,6 +13,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectsComponent } from './components/proyects/proyects.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { TopBarComponent } from './components/intro/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     ExperienceComponent,
     EducationComponent,
     SkillsComponent,
-    ProyectsComponent
+    ProyectsComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
