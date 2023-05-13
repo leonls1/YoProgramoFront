@@ -29,7 +29,7 @@ import { TopBarComponent } from './components/intro/top-bar/top-bar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule,
+    NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     FormsModule,
   ],
