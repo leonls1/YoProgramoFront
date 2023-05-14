@@ -5,7 +5,7 @@
 package com.CV.BackEnd.Service;
 
 
-import com.CV.BackEnd.Model.User;
+import com.CV.BackEnd.Model.Persona;
 import java.util.List;
 import java.util.Map;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +14,14 @@ import org.springframework.http.ResponseEntity;
  *
  * @author leon
  */
-public interface IUserService {
-   public List<User> getUsers();
+public interface IPersonaService {
+   public List<Persona> getPersonas();
     
-    public User saveUser(User user);
+    public Persona savePersona(Persona per);
 
-    public ResponseEntity<User> findUser(Long id);
+    public ResponseEntity<Persona> findPersona(Long id);
 
-    public ResponseEntity<User> updateUser(Long id, User user);
+    public ResponseEntity<Persona> updatePersona(Long id, Persona per);
 
-    public ResponseEntity<Map<String, Boolean>> deleteUser(Long id); 
+    public ResponseEntity<Map<String, Boolean>> deletePersona(Long id); 
 }

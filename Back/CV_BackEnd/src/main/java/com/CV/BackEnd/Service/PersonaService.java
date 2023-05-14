@@ -5,61 +5,64 @@
 package com.CV.BackEnd.Service;
 
 import com.CV.BackEnd.Exception.ResourceNotFoundException;
-import com.CV.BackEnd.Model.User;
+import com.CV.BackEnd.Model.Persona;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import com.CV.BackEnd.Repository.UsuarioRepository;
+import com.CV.BackEnd.Repository.PersonaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
  * @author leon
  */
 @Service
-public class UserService implements IUserService {
-    
-    private UsuarioRepository repo;
+public class PersonaService implements IPersonaService {
+
+    @Autowired
+    private PersonaRepository repo;
+
+
     @Override
-    public List<User> getUsers() {
-        List<User> list= repo.findAll();
-        return list;
+    public List<Persona> getPersonas() {
+               List<Persona> list= repo.findAll();
+        return list;}
+
+    @Override
+    public Persona savePersona(Persona per) {
+                return repo.save(per);
     }
 
     @Override
-    public User saveUser(User user) {
-        return repo.save(user);
+    public ResponseEntity<Persona> findPersona(Long id) {
+                Persona per = repo.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("no existe la persona con el id: " + id));
+        return ResponseEntity.ok(per);
     }
 
-    @Override
-    public ResponseEntity<User> findUser(Long id) {
-        User user = repo.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("no existe el usuario con el id: " + id));
-        return ResponseEntity.ok(user);
-    }
-
-    @Override
-    public ResponseEntity<User> updateUser(Long id, User user) {
-        User us = repo.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("no existe el usuario con el id: " + id));
+    @Override //nombre, apellido, descripcion, titulo
+    public ResponseEntity<Persona> updatePersona(Long id, Persona per) {
+        Persona pers = repo.findById(id)
+                                        .orElseThrow(()-> new ResourceNotFoundException("no existe la persona con el id: " + id));
+        pers.setNombre(per.getNombre());
+        pers.setApellido(per.getApellido());
+        pers.setDescripcion(per.getDescripcion());
+        pers.setTitulo(per.getTitulo());                
         
-        us.setDescripcion(user.getDescripcion());
-        us.setNombreCompleto(user.getNombreCompleto());
-        us.setTitulo(user.getTitulo());
-        
-        User userUpdated = repo.save(us);
-        return ResponseEntity.ok(userUpdated);
-    }
+        Persona perUpdated = repo.save(pers);
+        return ResponseEntity.ok(perUpdated);}
 
     @Override
-    public ResponseEntity<Map<String, Boolean>> deleteUser(Long id) {
-        User user = repo.findById(id)
-				    .orElseThrow(() -> new ResourceNotFoundException("No existe el usuario con el ID : " + id));
+    public ResponseEntity<Map<String, Boolean>> deletePersona(Long id) {
+        Persona per = repo.findById(id)
+				    .orElseThrow(() -> new ResourceNotFoundException("No existe la persona con el ID : " + id));
 		
-		repo.delete(user);
+		repo.delete(per);
 		Map<String, Boolean> respuesta = new HashMap<>();
 		respuesta.put("eliminar",Boolean.TRUE);
-		return ResponseEntity.ok(respuesta); }
+		return ResponseEntity.ok(respuesta); 
+    }
     
 }

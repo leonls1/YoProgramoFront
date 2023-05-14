@@ -4,18 +4,15 @@
         <div class="col-1">
             <img src="../../../assets/images/profile.jpeg" alt="profile image" class="profile">
         </div>
-        <div class="col-md-2">
-            <p>Nombre: {{nombre}}</p>
-            <p>Titulo: {{titulo}}</p>
+        <div class="col-md-2 offset-1">
+            <p>{{persona.nombre}} {{persona.apellido}}</p>
+            <p>{{persona.titulo}}</p>
         </div>
         <div class="col-8" id="intro-desc">
-            <app-button class="offset-11 btn-add" texto="edit" color="yellow" [estado]=false icon="bi bi-pencil"
+            <app-button class=" btn-add" texto="edit" color="yellow" [estado]=false icon="bi bi-pencil"
                 (btnClick)="enableEditing()"></app-button>
                 <h3><b>Acerca de mi</b></h3>
-                <p>{{descripcion}}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia atque vel quasi modi eligendi et illum
-                officiis perspiciatis itaque obcaecati, voluptates dolorum, dolorem consequuntur consequatur. Veniam
-                molestias placeat non hic!
+                <p>{{persona.descripcion}} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui voluptates deserunt maxime architecto ipsa sapiente dolore voluptatibus atque a natus explicabo quia assumenda tenetur, nemo error animi corporis aut quis.
                 </p>
         </div>
 
