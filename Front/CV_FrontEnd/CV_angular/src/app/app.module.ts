@@ -14,6 +14,8 @@ import { ProyectsComponent } from './components/proyects/proyects.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { TopBarComponent } from './components/intro/top-bar/top-bar.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { TopBarComponent } from './components/intro/top-bar/top-bar.component';
     EducationComponent,
     SkillsComponent,
     ProyectsComponent,
-    TopBarComponent
+    TopBarComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
