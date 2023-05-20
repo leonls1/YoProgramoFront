@@ -13,6 +13,7 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -28,7 +29,7 @@ public class JwtTokenFilter extends OncePerRequestFilter{
     
     @Autowired
     UserDetailsImpl userImpl;   
-    /*
+    
     @Override
     protected void doFilterInternal(HttpServletRequest request, 
                                     HttpServletResponse response, 
@@ -38,7 +39,7 @@ public class JwtTokenFilter extends OncePerRequestFilter{
             if(token != null && jwtProvider.validateToken(token)){
             String nombreUsuario = jwtProvider.getNombreUsuarioFromToken(token);
             UserDetails userDetails = userImpl.loadUserByUsername(nombreUsuario);
-            UsernamePasswordAuthenticationToken auth =UsernamePasswordAuthenticationToken(userDetails, null
+            UsernamePasswordAuthenticationToken auth =new UsernamePasswordAuthenticationToken(userDetails, null,
                 userDetails.getAuthorities());    
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
@@ -54,10 +55,7 @@ public class JwtTokenFilter extends OncePerRequestFilter{
          if(header != null && header.startsWith("Bearer"))
              return header.replace("Bearer", "");
          return null;
-    }*/
-
-    @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+
 }

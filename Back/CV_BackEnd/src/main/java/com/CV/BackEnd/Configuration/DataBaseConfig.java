@@ -26,9 +26,9 @@ public class DataBaseConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("mysql://ukyvoi88wvbn1ltg:uJmeaEWa3k8mBBe7rur3@bxzpfeybezwzbqqjlsxa-mysql.services.clever-cloud.com:3306/bxzpfeybezwzbqqjlsxa");
-        dataSource.setUsername("ukyvoi88wvbn1ltg");
-        dataSource.setPassword("uJmeaEWa3k8mBBe7rur3");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/Curriculum");
+        dataSource.setUsername("Leon");
+        dataSource.setPassword("yoProgramo");
         return dataSource;
     }
 

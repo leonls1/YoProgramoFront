@@ -7,6 +7,7 @@ package com.CV.BackEnd.Service;
 import com.CV.BackEnd.Exception.ResourceNotFoundException;
 import com.CV.BackEnd.Model.Experience;
 import com.CV.BackEnd.Repository.ExperienceRepository;
+import jakarta.transaction.Transactional;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
  * @author leon
  */
 @Service
+@Transactional
 public class ExperienceService implements IExperienceService {
 
     @Autowired
