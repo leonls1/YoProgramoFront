@@ -8,15 +8,22 @@ import { ExperienceService } from 'src/app/service/experience.service';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent implements OnInit{
-  experience: Experience[] = [];
+  experiencias: Experience[] = [];
 
   constructor(private service: ExperienceService){}
-
+  
   ngOnInit(): void {
-    this.cargarExperience();
+   this.cargarExperience();
   }
 
+
   cargarExperience():void{
-    this.service.lista().subscribe(data=>this.experience = data)
+    this.service.traerExperiencias().subscribe(data=>this.experiencias = data); 
+  }
+
+  onEdit():void{}
+
+  onDelete():void{
+    this.service.delete
   }
 }

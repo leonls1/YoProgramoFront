@@ -4,7 +4,6 @@
  */
 package com.CV.BackEnd.Controller;
 
-import com.CV.BackEnd.Model.Ability;
 import com.CV.BackEnd.Model.Experience;
 import com.CV.BackEnd.Service.IExperienceService;
 import java.util.List;
@@ -24,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("exp")
+@RequestMapping("CV/V1")
 @CrossOrigin("http://localhost:4200/")
 public class ExperienceController {
     
@@ -32,9 +31,8 @@ public class ExperienceController {
     IExperienceService service;
     
     @GetMapping("/experiencias")
-    public ResponseEntity<List<Experience>> list(){
-        List<Experience> list = service.getExperiences();
-        return new ResponseEntity(list, HttpStatus.OK);
+    public List<Experience> list(){
+       return service.getExperiences();
     }
     
 

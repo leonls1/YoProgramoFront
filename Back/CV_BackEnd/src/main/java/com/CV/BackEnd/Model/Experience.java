@@ -4,10 +4,6 @@
  */
 package com.CV.BackEnd.Model;
 
-/**
- *
- * @author leon
- */
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -26,7 +26,6 @@ import com.CV.BackEnd.Service.IPersonaService;
 public class PersonaController {
     @Autowired
     private IPersonaService service;
-    
 
     
     @GetMapping("/personas")

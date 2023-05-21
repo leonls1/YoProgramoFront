@@ -10,9 +10,8 @@ import { PersonaService } from 'src/app/service/persona.service';
 export class IntroComponent implements OnInit {
 
    persona:Persona = new Persona("","","","");
+  personas:Persona[] = [];
 
-  descripcion: String = "Estudiante de ingeniria en sistemas, desarrollando proyectos fullstack y aplicaciones .net";
-  editable: boolean = false;
   validar(){
     console.log("validado") 
   }
@@ -22,10 +21,7 @@ export class IntroComponent implements OnInit {
 
   ngOnInit(): void {
     this.perServico.getUsuarioPpal().subscribe(data => this.persona = data);
+    this.perServico.getUsuarios().subscribe(data => this.personas = data);
   }
 
-  enableEditing(){
-    this.editable = true;
-    console.log("editing");
-  }
 }

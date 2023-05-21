@@ -10,15 +10,12 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.http.ResponseEntity;
 
-/**
- *
- * @author leon
- */
+
 public interface IExperienceService {
         
     public List<Experience> getExperiences();
     
-    public Experience saveExperience(Experience ability);
+    public Experience saveExperience(Experience exp);
 
     public ResponseEntity<Experience> findExp(Long id);
 

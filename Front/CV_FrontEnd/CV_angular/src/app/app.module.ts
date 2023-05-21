@@ -16,6 +16,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { TopBarComponent } from './components/intro/top-bar/top-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { NewExpComponent } from './components/experience/new-exp/new-exp.component';
+import { EditExpComponent } from './components/experience/edit-exp/edit-exp.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { LoginComponent } from './components/login/login.component';
     ProyectsComponent,
     TopBarComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NewExpComponent,
+    EditExpComponent
   ],
   imports: [
     BrowserModule,

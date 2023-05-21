@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
  * @author leon
  */
 @Service
-@Transactional
+
 public class ExperienceService implements IExperienceService {
 
     @Autowired

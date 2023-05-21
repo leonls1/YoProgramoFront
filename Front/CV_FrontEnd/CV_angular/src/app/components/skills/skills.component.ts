@@ -1,26 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Skill } from 'src/app/models/Skill.model';
-import { SkillService  } from 'src/app/service/skill-service.service';
+import { SkillService  } from 'src/app/service/skill.service';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent {
-  listaHabilidades :Skill[];
+export class SkillsComponent implements OnInit{
+  listaHabilidades :Skill[] =[];
 
 
   constructor(private servicio: SkillService){
-    this.listaHabilidades =[]
   }
-
-  ngOninit(){
+  ngOnInit(): void {
     this.obtenerHabilidades();
   }
 
   obtenerHabilidades(){
-    this.servicio.obtenerListaHabilidades().subscribe((dato:Skill[]) => {this.listaHabilidades = dato;});
+    this.servicio.obtenerListaHabilidades().subscribe(dato => {this.listaHabilidades = dato;});
     
   }
 }

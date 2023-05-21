@@ -8,28 +8,28 @@ import { Experience } from '../models/Experience.model';
 })
 export class ExperienceService {
 
-  expURL = 'https://localhost:8080/exp';
+  expURL = 'http://localhost:8080/CV/V1';
   constructor(private httpClient: HttpClient) { }
 
-  public lista():Observable<Experience[]>{
-    return this.httpClient.get<Experience[]>(this.expURL + 'experiencias');
+  public traerExperiencias():Observable<Experience[]>{
+    return this.httpClient.get<Experience[]>(this.expURL + '/experiencias');
     //es asi que termina retornandome una lista de todas las experiencias que en la base esten cargadas
   }
 
   public detail(id:number):Observable<Experience>{
-    return this.httpClient.get<Experience>(this.expURL + `buscar/${id}`); //el signo $ es para indicar que
+    return this.httpClient.get<Experience>(this.expURL + `/buscar/${id}`); //el signo $ es para indicar que
     //le envio el parametro recibido en mi metodo
   }
 
   public save(experience:Experience):Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'crear', experience);
+    return this.httpClient.post<any>(this.expURL + '/crear', experience);
   }
 
   public update(experience:Experience, id: number):Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `actualizar/${id}`, experience);
+    return this.httpClient.put<any>(this.expURL + `/actualizar/${id}`, experience);
   }
 
   public delete(id:number):Observable<any>{
-    return this.httpClient.delete(this.expURL + `borrar/${id}`);
+    return this.httpClient.delete(this.expURL + `/borrar/${id}`);
   }
 }

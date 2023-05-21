@@ -1,17 +1,34 @@
 <div class="row">
-        <!--tengo que agregar el *ngfor arriba para que recorra la lista de experiencias-->
+    <!--tengo que agregar el *ngfor arriba para que recorra la lista de experiencias-->
     <h3><b>Experiencia</b></h3>
-    <div class="col-lg-11-offset-1">
-        <table class="table">
-            <tbody>
-                <tr>
-                    <td>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaExperiencia">Agregar experiencia</button>
     </div>
-        
+    <br>
+    <div class="row" *ngFor="let exp of experiencias">
+        <div class="row">
+            <div class="col-md-1 offset-1">
+                <p>{{exp.nombreEmpresa}} / {{exp.rol}} </p>
+            </div>
+            <div class="col-md-3 offset-7 ">
+                <button class="btn btn-secondary" 
+                style="margin-right: 5px;"
+                routerLink="/editarExperiencia"
+                > <i class="bi bi-pencil"></i>
+                Editar
+            </button>
+                <button class="btn btn-danger"
+                (click)="onDelete()"
+                ><i class="bi bi-trash"></i>
+                Eliminar</button>
+            </div>
+        </div>
+        <div class="col-3 offset-1 ">
+            <p><b>FechaInicio-Fin: </b>{{exp.fechaInicio}} - {{exp.fechaFin}}</p>
+        </div>
+        <div class="col-8">
+            <p>{{exp.descripcion}}</p>
+        </div>
+    </div>
 
 </div>
