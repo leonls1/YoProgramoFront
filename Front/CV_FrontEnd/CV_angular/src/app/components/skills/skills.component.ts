@@ -10,7 +10,6 @@ import { SkillService  } from 'src/app/service/skill.service';
 export class SkillsComponent implements OnInit{
   listaHabilidades :Skill[] =[];
 
-
   constructor(private servicio: SkillService){
   }
   ngOnInit(): void {
@@ -21,4 +20,6 @@ export class SkillsComponent implements OnInit{
     this.servicio.obtenerListaHabilidades().subscribe(dato => {this.listaHabilidades = dato;});
     
   }
+
+  onDelete(id:number): void{}
 }
