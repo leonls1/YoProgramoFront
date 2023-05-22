@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: '', redirectTo: '', pathMatch: 'full'},
   {path:'login', component:LoginComponent},
   {path:'nuevaExperiencia', component:NewExpComponent},
-  {path:'editarExperiencia', component:EditExpComponent}];
+  {path:'editarExperiencia/:id', component:EditExpComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

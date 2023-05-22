@@ -1,1 +1,35 @@
-<p>edit-exp works!</p>
+<div class="container" *ngIf="exp">
+    <div class="row">
+        <div>
+            <form action="" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreExp">Nombre de la empresa</label>
+                    <input type="text" class="form-control" id="nombreExp" name="nombre" [(ngModel)]="exp.nombreEmpresa">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="exp.descripcion">
+                </div>
+
+                <div class="form-group">
+                    <label for="rol">Rol</label>
+                    <input type="text" class="form-control" id="rol" name="rol" [(ngModel)]="exp.rol">
+                </div>
+
+                <div class="form-group">
+                    <label for="rol">Fecha Inicio</label>
+                    <input type="text" class="form-control" id="fechaInicio" name="fechaInicio" [(ngModel)]="exp.fechaInicio">
+                </div>
+
+                <div class="form-group">
+                    <label for="rol">Fecha Fin</label>
+                    <input type="text" class="form-control" id="fechaFin" name="fechaFin" [(ngModel)]="exp.fechaFin">
+                </div>
+
+                <button class="btn btn-primary">Actualizar experiencia</button>
+
+
+            </form>
+        </div>
+    </div>
+</div>

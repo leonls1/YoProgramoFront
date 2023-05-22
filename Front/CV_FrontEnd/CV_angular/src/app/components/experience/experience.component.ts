@@ -23,7 +23,11 @@ export class ExperienceComponent implements OnInit{
 
   onEdit():void{}
 
-  onDelete():void{
-    this.service.delete
+  onDelete(id?:number):void{
+    if (id != undefined) //validando primero que exista esa experiencia en la base de datos
+    this.service.delete(id).subscribe(data=> {
+      this.cargarExperience();
+    },error => alert("no se ha podido borrar la experiencia")
+    )
   }
 }

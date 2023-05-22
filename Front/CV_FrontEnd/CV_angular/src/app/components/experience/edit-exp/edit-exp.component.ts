@@ -10,7 +10,7 @@ import { ExperienceService } from 'src/app/service/experience.service';
 })
 export class EditExpComponent implements OnInit {
 
-  exp : Experience = null;
+  exp : Experience =null;
 
   constructor(private service:ExperienceService, private activatedRouter: ActivatedRoute, 
     private router:Router){}
@@ -20,7 +20,8 @@ export class EditExpComponent implements OnInit {
       this.service.detail(id).subscribe(data=>
         this.exp = data,
         error =>{
-          
+          alert("Error al modificar la experiencia")
+        this.router.navigate(['']);
         });
   }
 
