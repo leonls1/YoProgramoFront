@@ -27,6 +27,7 @@ export class ExperienceComponent implements OnInit{
     if (id != undefined) //validando primero que exista esa experiencia en la base de datos
     this.service.delete(id).subscribe(data=> {
       this.cargarExperience();
+      alert("Educacion borrada")
     },error => alert("no se ha podido borrar la experiencia")
     )
   }

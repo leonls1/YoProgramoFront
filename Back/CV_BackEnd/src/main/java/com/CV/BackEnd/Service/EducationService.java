@@ -46,11 +46,12 @@ public class EducationService implements IEducationService {
         Education edu = repo.findById(id)
                 .orElseThrow(()-> new ResourceNotFoundException("no existe la educacion con el id: " + id));
         
-        edu.setFechaInicio(education.getFechaInicio());
-        edu.setFechaFin(education.getFechaFin());
-        edu.setDescripcion(education.getDescripcion());
-        edu.setNombreLugar(education.getNombreLugar());
-        edu.setTituloCarrera(education.getTituloCarrera());
+        edu.setDateBegining(education.getDateBegining());
+        edu.setDateEnd(education.getDateEnd());
+        edu.setDescription(education.getDescription());
+        edu.setPlace(education.getPlace());
+        edu.setTittle(education.getTittle());
+        
         
         Education eduUpdated = repo.save(edu);
         return ResponseEntity.ok(eduUpdated);

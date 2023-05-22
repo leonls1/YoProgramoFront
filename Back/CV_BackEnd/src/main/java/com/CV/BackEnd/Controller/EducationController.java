@@ -25,36 +25,36 @@ import org.springframework.web.bind.annotation.RestController;
  * @author leon
  */
 @RestController
-@RequestMapping("CV/V1/")
+@RequestMapping("CV/V1/edu")
 @CrossOrigin("http://localhost:4200/")
 public class EducationController {
-  /*  
+
     @Autowired
     private IEducationService service;
     
     @GetMapping("/educacion")
     public List<Education> getEducations(){
-        return
+        return service.getEducations();
     };
     
-    @PostMapping("/")
+    @PostMapping("/crear")
     public Education saveHability(@RequestBody Education edu){
-        
+        return service.saveEducation(edu);
     };
     
-    @GetMapping("/")
+    @GetMapping("/buscar/{id}")
     public ResponseEntity<Education> findHab(@PathVariable Long id){
-        
+        return service.findEdu(id);
     };
     
-    @PutMapping("/")
+    @PutMapping("/actualizar/{id}")
     public ResponseEntity<Education> updateHab(@PathVariable Long id,
                                                @RequestBody Education edu){
-        
+        return service.updateEdu(id, edu);
     };
     
-    @DeleteMapping("/")
+    @DeleteMapping("/borrar/{id}")
     public ResponseEntity<Map<String, Boolean>> deleteHab(@PathVariable Long id){
-        
-    }; */
+        return service.deleteEdu(id);
+    }; 
 }

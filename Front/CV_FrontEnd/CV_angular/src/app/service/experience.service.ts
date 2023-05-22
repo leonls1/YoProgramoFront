@@ -8,7 +8,7 @@ import { Experience } from '../models/Experience.model';
 })
 export class ExperienceService {
 
-  expURL = 'http://localhost:8080/CV/V1';
+  expURL = 'http://localhost:8080/CV/V1/exp';
   constructor(private httpClient: HttpClient) { }
 
   public traerExperiencias():Observable<Experience[]>{

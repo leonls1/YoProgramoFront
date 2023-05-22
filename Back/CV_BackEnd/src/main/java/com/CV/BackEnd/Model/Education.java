@@ -26,30 +26,28 @@ public class Education {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     
-    @Column(name="fechaInicio")
-    private String fechaInicio;
+    @Column(name="dateBegining")
+    private String dateBegining;
     
-    @Column(name="fechaFin")
-    private String fechaFin;
+    @Column(name="dateEnd")
+    private String dateEnd;
     
-    @Column(name="nombreLugar")
-    private String nombreLugar;
+    @Column(name="place")
+    private String place;
     
-    @Column(name="tituloCarrera")
-    private String tituloCarrera;
+    @Column(name="tittle")
+    private String tittle;
     
-    @Column(name="descripcion")
-    private String descripcion;
+    @Column(name="description")
+    private String description;
 
-    public Education(Long id, String fechaInicio, String fechaFin, String nombreLugar, String tituloCarrera, String descripcion) {
-        this.id = id;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.nombreLugar = nombreLugar;
-        this.tituloCarrera = tituloCarrera;
-        this.descripcion = descripcion;
+    public Education(String dateBegining, String dateEnd, String place, String tittle, String description) {
+        this.dateBegining = dateBegining;
+        this.dateEnd = dateEnd;
+        this.place = place;
+        this.tittle = tittle;
+        this.description = description;
     }
-
     public Education() {
     }
 }

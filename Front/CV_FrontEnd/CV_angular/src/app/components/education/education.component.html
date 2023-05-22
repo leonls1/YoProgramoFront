@@ -1,16 +1,34 @@
 <div class="row">
-    <!--tengo que agregar el *ngfor arriba para que recorra la lista de experiencias-->
+
     <h3><b>Educacion</b></h3>
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-3">
-            <p>Lugar</p>
-            <p>fecha inicio - fecha fin</p>
-            <p>logo</p>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaEducacion">Agregar educacion</button>
+    </div>
+    <br>
+    <div class="row" *ngFor="let edu of educaciones">
+        <div class="row">
+            <div class="col-md-3 offset-1">
+                <p>{{edu.tittle}}  - {{edu.place}} </p>
+            </div>
+            <div class="col-md-3 offset-5 ">
+                <button class="btn btn-secondary" 
+                style="margin-right: 5px;"
+                routerLink="/editarEducacion/{{edu.id}}"
+                > <i class="bi bi-pencil"></i>
+                Editar
+            </button>
+                <button class="btn btn-danger"
+                (click)="onDelete(edu.id)"
+                ><i class="bi bi-trash"></i>
+                Eliminar</button>
+            </div>
+        </div>
+        <div class="col-3 offset-1 ">
+            <p><b>Fecha Inicio-Fin: </b>{{edu.dateBegining}} - {{edu.dateEnd}}</p>
         </div>
         <div class="col-8">
-            <h3><b>Descripcion</b></h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia harum dolor amet, velit molestias sint nemo eum sit asperiores illum ea aut assumenda sapiente soluta ut, nesciunt nisi laboriosam laborum?</p>
+            <p>{{edu.description}}</p>
         </div>
     </div>
+
 </div>
