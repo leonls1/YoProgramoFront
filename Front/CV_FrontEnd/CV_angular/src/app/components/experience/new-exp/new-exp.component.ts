@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Experience } from 'src/app/models/Experience.model';
 import { ExperienceService } from 'src/app/service/experience.service';
@@ -8,14 +8,12 @@ import { ExperienceService } from 'src/app/service/experience.service';
   templateUrl: './new-exp.component.html',
   styleUrls: ['./new-exp.component.css'],
 })
-export class NewExpComponent implements OnInit {
+export class NewExpComponent {
   nombre: string = '';
   descripcion: string = '';
   fechaInicio: string = '';
   fechaFin: string = '';
   rol: string = '';
-
-  ngOnInit(): void {}
 
   constructor(private service: ExperienceService, private router: Router) {}
 
@@ -32,7 +30,7 @@ export class NewExpComponent implements OnInit {
         alert('Experiencia añadida');
         this.router.navigate(['']);
       },
-      (errro) => {
+      (error) => {
         alert('Fallo');
         this.router.navigate(['']);
       }

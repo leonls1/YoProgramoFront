@@ -33,7 +33,8 @@ export class SkillService{
     return this.httpClient.get<Skill>(`${this.buscarURL}/${id}`);
   }
   
-  eliminarHabilidad(id:number):Observable<Object>{
-    return this.httpClient.delete(`${this.baseURL}/${id}`);
+   public eliminarHabilidad(id:number):Observable<any>{
+    return this.httpClient.delete(this.baseURL + `/borrar/${id}`);
   }
+
 }

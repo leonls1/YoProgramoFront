@@ -41,7 +41,7 @@ public class AbilityController {
     };
     
     @GetMapping("/habilidades/buscar/{id}")
-    public ResponseEntity<Ability> findHab(Long id){
+    public ResponseEntity<Ability> findHab(@PathVariable Long id){
         return service.findHab(id);
     };
     
@@ -52,8 +52,9 @@ public class AbilityController {
     };
     
     @DeleteMapping("/habilidades/borrar/{id}")
-    public ResponseEntity<Map<String, Boolean>> deleteHab(Long id){
+    public ResponseEntity<Map<String, Boolean>> deleteHab(@PathVariable Long id){
         return service.deleteHab(id);
     };
+    
     
 }

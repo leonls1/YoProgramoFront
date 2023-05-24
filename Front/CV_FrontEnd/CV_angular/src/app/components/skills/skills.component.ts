@@ -21,5 +21,13 @@ export class SkillsComponent implements OnInit{
     
   }
 
-  onDelete(id:number): void{}
+  onDelete(id:number): void{
+    if (id != undefined)
+    this.servicio.eliminarHabilidad(id).subscribe(data => {
+      this.obtenerHabilidades();
+      alert("hablidad borrada")},
+      error=>
+      alert("Error"));
+  }
+
 }

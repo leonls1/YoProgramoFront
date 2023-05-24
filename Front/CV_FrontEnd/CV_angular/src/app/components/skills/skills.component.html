@@ -1,75 +1,42 @@
 <div class="container-fluid">
     <h2>Habilidades</h2>
-    
-    <p class="offset-1">Hard Skills</p>
-    <div class="d-flex flex-row">       
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevoSkill">Agregar habilidad</button>
+    </div>
+
+    <h3 class="offset-1">Hard Skills</h3>
+    <div class="d-flex flex-row">
         <div *ngFor="let skill of listaHabilidades">
             <div class="col-2" *ngIf="!skill.tipo">
-                <circle-progress
-                titleFontSize="28"
-                [percent]="skill.porcentaje"
-                [title]="skill.nombre"
-                [showSubtitle]="false"
-                [showUnits]="false"
-                backgroundColor="#3C4581"
-                outerStrokeColor = "#81783C"
-                titleColor="white"
-                [showInnerStroke] = "false"
-                ></circle-progress>
+                <circle-progress titleFontSize="28" [percent]="skill.porcentaje" [title]="skill.nombre"
+                    [showSubtitle]="false" [showUnits]="false" backgroundColor="#3C4581" outerStrokeColor="#81783C"
+                    titleColor="white" [showInnerStroke]="false"></circle-progress>
+
+                <td><button class="btn btn-secondary" style="margin-right: 5px;" routerLink="/editarSkill/{{skill.id}}"> <i
+                            class="bi bi-pencil "></i>
+                    </button></td>
+                <td><button class="btn btn-danger " (click)="onDelete(skill.id)"><i class="bi bi-trash "></i>
+                    </button></td>
             </div>
         </div>
-       
+
     </div>
 
-    <p>Soft Skills</p>
-    <div class="d-flex flex-row">       
+    <h3 class="offset-1">Soft Skills</h3>
+    <div class="d-flex flex-row">
         <div *ngFor="let skill of listaHabilidades">
-            <div class="col-2 d-flex" *ngIf="skill.tipo">
-                <circle-progress
-                titleFontSize="20"
-                [percent]="skill.porcentaje"
-                [title]="skill.nombre"
-                [showUnits]="false"
-                [showSubtitle]="false"
-                backgroundColor="#3DDAB8"
-                outerStrokeColor = "#DA3D5F"
-                titleColor="white"
-                [showInnerStroke] = "false"
-                ></circle-progress>
+            <div class="col-2" *ngIf="skill.tipo">                
+                <circle-progress titleFontSize="20" [percent]="skill.porcentaje" [title]="skill.nombre"
+                    [showUnits]="false" [showSubtitle]="false" backgroundColor="#3DDAB8" outerStrokeColor="#DA3D5F"
+                    titleColor="white" [showInnerStroke]="false"></circle-progress>
+
+                <td><button class="btn btn-secondary" style="margin-right: 5px;" routerLink="/editarSkill/{{skill.id}}"> <i
+                            class="bi bi-pencil "></i>
+                    </button></td>
+                <td><button class="btn btn-danger " (click)="onDelete(skill.id)"><i class="bi bi-trash "></i>
+                    </button></td>
             </div>
         </div>
-       
-    </div>
 
-    <div class="row">
-        <div class="col-11 offset-1">
-            <circle-progress [percent]="85" [radius]="70" [title]="'Organization'" [showUnits]="false"
-                [outerStrokeWidth]="16" [showSubtitle]="false" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'"
-                [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300"></circle-progress>
-            <circle-progress [percent]="85" [radius]="70" [title]="'plannig'" [showUnits]="false"
-                [outerStrokeWidth]="16" [showSubtitle]="false" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'"
-                [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300"></circle-progress>
-            <circle-progress [percent]="60" [radius]="70" [title]="'Java'" [showUnits]="false" [outerStrokeWidth]="16"
-                [showSubtitle]="false" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'"
-                [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300"></circle-progress>
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col-11 offset-1">
-            <h3>Soft Skills</h3>
-            <circle-progress [percent]="30" [radius]="70" [title]="'empathy'" [outerStrokeWidth]="16"
-                [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true"
-                [animationDuration]="300"></circle-progress>
-        </div>
     </div>
 </div>
-<!--
-<h1>Habilidades</h1>
-<div class="container-fluid">
-    <div *ngFor="let num of [123,23]" class="row">
-        <div class="col-md-2" >
-            num
-        </div>
-    </div>
-</div>-->
