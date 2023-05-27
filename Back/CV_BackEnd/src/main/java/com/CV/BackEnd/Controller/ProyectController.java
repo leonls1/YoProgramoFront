@@ -4,7 +4,19 @@
  */
 package com.CV.BackEnd.Controller;
 
+import com.CV.BackEnd.Model.Proyect;
+import com.CV.BackEnd.Service.IProyectService;
+import java.util.List;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,5 +24,35 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("CV/V1")
 @CrossOrigin("http://localhost:4200/")
 public class ProyectController {
+    
+    @Autowired
+    public IProyectService service;
+    
+    @GetMapping("/proyectos")
+    public List<Proyect> getProyects(){
+        return service.getProyects();
+    }
+    
+    @GetMapping("/buscar/{id}")
+    public ResponseEntity<Proyect> findProyect(@PathVariable Long id){
+        return service.findProyect(id);
+    }
+    
+    @PostMapping("/guardar")
+    public Proyect saveProyect(@RequestBody Proyect proyect){
+        return service.saveProyect(proyect);
+    }
+    
+    @PutMapping("/editar/{id}")
+    public ResponseEntity<Proyect> editProyect(@RequestBody Proyect pro,
+                                               @PathVariable Long id){
+        return service.updateProyect(id, pro);
+    }
+    
+    @DeleteMapping("/borrar/{id}")
+    public ResponseEntity <Map<String, Boolean>> deleteProyect(@PathVariable Long id){
+        return service.deleteProyect(id);
+    }
+    
     
 }
