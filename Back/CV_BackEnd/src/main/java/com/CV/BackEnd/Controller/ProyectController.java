@@ -28,28 +28,28 @@ public class ProyectController {
     @Autowired
     public IProyectService service;
     
-    @GetMapping("/proyectos")
+    @GetMapping("/proyects")
     public List<Proyect> getProyects(){
         return service.getProyects();
     }
     
-    @GetMapping("/buscar/{id}")
+    @GetMapping("/find/{id}")
     public ResponseEntity<Proyect> findProyect(@PathVariable Long id){
         return service.findProyect(id);
     }
     
-    @PostMapping("/guardar")
+    @PostMapping("/save")
     public Proyect saveProyect(@RequestBody Proyect proyect){
         return service.saveProyect(proyect);
     }
     
-    @PutMapping("/editar/{id}")
+    @PutMapping("/edit/{id}")
     public ResponseEntity<Proyect> editProyect(@RequestBody Proyect pro,
                                                @PathVariable Long id){
         return service.updateProyect(id, pro);
     }
     
-    @DeleteMapping("/borrar/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity <Map<String, Boolean>> deleteProyect(@PathVariable Long id){
         return service.deleteProyect(id);
     }
