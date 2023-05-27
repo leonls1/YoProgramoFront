@@ -1,4 +1,5 @@
 export class  Proyect{
+    id?:number;
     nombre:string
     link:string
     descripcion:string;

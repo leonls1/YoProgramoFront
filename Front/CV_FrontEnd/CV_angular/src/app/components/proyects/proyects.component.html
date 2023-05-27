@@ -1,17 +1,35 @@
 <div class="row">
     <h2>Proyectos realizados</h2>
-
-    <div class="col-2 offset-1" >
-        <h3>Nombre</h3>
-        <h5>Fecha creacion</h5>
-        <h5>link(url)</h5>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevoProyecto">Agregar proyecto</button>
     </div>
-    <div class="col-8">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos molestias cum unde ad quo, necessitatibus nemo hic. Deserunt, esse velit. Voluptate eius voluptatum, temporibus earum nihil placeat incidunt in magni.</p>
-        <div>
-            <img src="../../../assets/images/Rappa!.png" alt="img1 del proyecto" class="img-proyect  img-fluid">
-            <img src="../../../assets/images/Rappa!.png" alt="img1 del proyecto" class="img-proyect  img-fluid">
-            <img src="../../../assets/images/Rappa!.png" alt="img1 del proyecto" class="img-proyect  img-fluid">
+    <div class="row" *ngFor="let proyect of proyectList">
+        <div class="row">
+            <div class="col-2 offset-1" >
+                <h3>{{proyect.nombre}}</h3>
+                <h5>{{proyect.fechaCreacion}}</h5>
+                <h5>{{proyect.link}}</h5>
+            </div>
+
+            <div class="col-md-3 offset-5 ">
+                <button class="btn btn-secondary" 
+                style="margin-right: 5px;"
+                routerLink="/editarProyecto/{{proyect.id}}"
+                > <i class="bi bi-pencil"></i>
+                Editar
+                </button>
+                <button class="btn btn-danger"
+                (click)="onDelete(proyect.id)"
+                ><i class="bi bi-trash"></i>
+                Eliminar</button>
+            </div>
+        </div>
+       
+        <div class="col-8 offset-1">
+            <h3>Descripcion</h3>
+            <p>{{proyect.descripcion}}</p>            
         </div>
     </div>
+    
+    
 </div>
