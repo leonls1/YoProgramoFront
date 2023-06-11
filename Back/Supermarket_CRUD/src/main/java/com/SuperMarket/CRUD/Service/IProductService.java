@@ -20,13 +20,13 @@ public interface IProductService {
     
     public Optional<Product> getByName(String name);
     
-    public ResponseEntity<Product> getOne(Long id);
+    public Optional<Product> getOne(Long id);
     
     public ResponseEntity<Product> update(Long id, Product product);
     
-    public Product save(Product product);
+    public void save(Product product);
     
-    public ResponseEntity<Map<String, Boolean>> delete(Long id);
+    public void delete(Long id);
   
     public boolean existById(Long id);
     

@@ -7,7 +7,9 @@ package com.SuperMarket.CRUD.DTO;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import java.util.Date;
+import lombok.Data;
 
+@Data
 public class ProductDto {
     @Min(0)
     private float price;

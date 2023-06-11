@@ -33,12 +33,12 @@ public class ProductService implements IProductService{
         return repo.findByName(name);
     }
 
-    @Override
+    /*
     public ResponseEntity<Product> getOne(Long id) {
         Product pro = repo.findById(id)
                 .orElseThrow(()->new ResourceNotFoundException("No se ha encontrado el producto con el id "+ id));
         return ResponseEntity.ok(pro);
-    }
+    }*/
 
     @Override
     public ResponseEntity<Product> update(Long id, Product product) {
@@ -55,11 +55,7 @@ public class ProductService implements IProductService{
         
     }
 
-    @Override
-    public Product save(Product product) {
-        return repo.save(product);
-    }
-
+/*
     @Override
     public ResponseEntity<Map<String, Boolean>> delete(Long id) {
        Product pro = repo.findById(id)
@@ -67,7 +63,7 @@ public class ProductService implements IProductService{
        Map<String, Boolean> response = new HashMap<>();
        response.put("eliminar",Boolean.TRUE);
        return ResponseEntity.ok(response);
-    }
+    }*/
 
     @Override
     public boolean existById(Long id) {
@@ -77,6 +73,21 @@ public class ProductService implements IProductService{
     @Override
     public boolean existByName(String name) {
        return repo.existByName(name);
+    }
+
+    @Override
+    public Optional<Product> getOne(Long id) {
+        return repo.findById(id);
+    }
+
+    @Override
+    public void save(Product product) {
+        repo.save(product);
+    }
+
+    @Override
+    public void delete(Long id) {
+        repo.deleteById(id);
     }
 
     
