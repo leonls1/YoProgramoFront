@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 public class ProductDto {
     @Min(0)
-    private float price;
+    private Float price;
     @NotBlank
     private String name;
     
@@ -20,12 +20,14 @@ public class ProductDto {
     
     private int type;
 
-    public ProductDto(float price, String name, Date expirationDate, int type) {
+    public ProductDto(Float price, String name, Date expirationDate, int type) {
         this.price = price;
         this.name = name;
         this.expirationDate = expirationDate;
         this.type = type;
     }
+
+    
     
     
 }

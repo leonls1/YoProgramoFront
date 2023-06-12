@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -91,7 +92,7 @@ public class ProductController {
             return new ResponseEntity(new Message("El nombre es obligatorio"),HttpStatus.BAD_REQUEST);
         }
         //validacion precio no negativo
-        if(productDto.getPrice()<0){
+        if(productDto.getPrice()<0 || productDto.getPrice() == null){
             return new ResponseEntity(new Message("El precio no puede ser menor a cero"), HttpStatus.BAD_REQUEST);
         }
         //validando que si existe el nombre se trate del producto en cuestion y no de otro, esto mediante el nombre y el id 
@@ -107,5 +108,13 @@ public class ProductController {
         
         service.update(id, productToEdit);
         return new ResponseEntity(new Message("Producto actualizado"), HttpStatus.OK);
+    }
+    
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id){
+        if(!service.existById(id))
+            return new ResponseEntity(new Message("no existe ese producto"),HttpStatus.NOT_FOUND);
+        service.delete(id);
+        return new ResponseEntity(new Message("producto eliminado"),HttpStatus.OK);
     }
 }
