@@ -1,0 +1,11 @@
+<div *ngIf="estado">
+    <button 
+        class="btn btn-n" 
+        (click) ="onClick()"
+        [ngStyle]="{'background-color':color}"
+        > 
+        <i class={{icon}}></i>
+        {{texto}}
+    </button>
+</div>
+

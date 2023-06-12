@@ -1,0 +1,9 @@
+<app-total [total]="total" mensaje="El total es: " ></app-total> <!--el total lo pongo entre [] porque de otra forma me tira error
+lo pongo en items para poder utilizarlo-->
+<div class="main-container">
+    <app-item 
+    *ngFor="let item of items" 
+    [item]="item"
+    (deleteItem)="deleteItem($event)" 
+    (toggleItem)="toggleItem($event)"></app-item>   <!-- con esta forma puedo usar el html que desarrolle en item.component y asi evitar declararla-->
+</div>

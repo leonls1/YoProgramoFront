@@ -1,0 +1,8 @@
+.container {
+    text-align: center; /*to aling de container in the middle of my page*/
+    padding: 10px 0
+}
+
+h2 { /*with this property h2 will be by my actual container, without any space  */ 
+    margin:0px
+}

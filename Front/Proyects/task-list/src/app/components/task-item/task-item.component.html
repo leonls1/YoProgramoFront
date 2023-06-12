@@ -1,0 +1,17 @@
+<div 
+class="task" 
+    [ngClass]="{ reminder: task.reminder}"  
+    (click)="onToggle(task)"
+    > <!--le va  a asignar a este item de task la clase reminder mediante su propiedad homologa-->
+    <h3>
+        {{task.text}} 
+        <fa-icon 
+        [icon]= "faTimes"
+        [ngStyle]="{'color': 'red'}"
+        (click)="onDelete(task)"
+        ></fa-icon> <!--el fa-icon va a ser para ingresar el icono que carge dentro de este componente-->
+    </h3> 
+    <p>
+        {{task.day}}
+    </p>
+</div>

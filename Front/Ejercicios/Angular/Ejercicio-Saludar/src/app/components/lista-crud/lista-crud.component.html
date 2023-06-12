@@ -1,0 +1,53 @@
+<div class="main">
+    <h1 class="title">CRUD: Task List</h1>
+
+    <form >
+        <table>
+            <tr>
+                <td><label for="nombre">Nombre </label></td>
+                <td><input type="text" name="nombre" [(ngModel)]="tsk.nombre" #nombre></td>
+            </tr> 
+            <tr>
+                <td><label for="fecha" >Fecha </label></td>
+                <td><input type="date" name="fecha" [(ngModel)]="tsk.fecha" #fecha></td>
+            </tr>  
+            <tr>
+                <td><label for="descripcion" >Descripcion </label></td>
+                <td><input type="" name="descripcion" [(ngModel)]="tsk.descripcion" #descripcion></td>
+            </tr>
+            
+            <tr>
+                <td><label for="enviar"></label></td>
+                <td><app-button
+                    color="green"
+                    text="Add Task"
+                    (btnClick)="addTask()">
+                </app-button></td>
+            </tr>
+        </table>
+    </form>
+
+    <h2>Tareas</h2>
+    <div class="tasks" *ngFor="let tsk of tasks">
+        <div *ngIf="!tsk.estado">
+            <p>{{tsk.nombre}} </p>
+            <p>{{tsk.fecha}} </p>
+            <app-button
+            text="Detalles"
+            color="pink"
+            (btnClick)="showDetails()"></app-button>
+            <app-button
+            text="Eliminar"
+            color="Red"
+            (btnClick)="removeTask(1)"></app-button>
+        </div>        
+    </div>
+
+    
+
+
+    <!--     <tr>
+                <td><input type="checkbox" name="estado" [(ngModel)]="">completado</td>
+            </tr>  -->
+</div>
+

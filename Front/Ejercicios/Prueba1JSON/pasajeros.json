@@ -1,0 +1,15 @@
+[
+{
+    "id": "1",
+    "name": "App 1",
+    "description": "App 1 description",
+    "version": "1.0"
+},
+
+{
+    "id": "2",
+    "name": "App 2",
+    "description": "App 2 description",
+    "version": "1.0"
+}
+]

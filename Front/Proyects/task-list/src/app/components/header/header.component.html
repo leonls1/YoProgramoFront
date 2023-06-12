@@ -1,0 +1,12 @@
+<header>
+<h1>{{title}}<!-- dependiendo de que sea showAddTask me cambia de color el boton-->
+    <app-button 
+    color="{{showAddTask ? 'red' : 'green'}}"  
+    text="{{showAddTask? 'Close Task' : 'Add Task'}}" 
+    (btnClick)="toggleAddTask()"
+    *ngIf="hasRoute('/')"s
+    ></app-button> <!--esta funcion que le envio al boton la defino en mi header-->
+   
+</h1> <!--one way binding; from component to the html-->
+
+</header>

@@ -1,0 +1,42 @@
+<h1>Lista de contactos</h1>
+
+<form (ngSubmit)="aniadirPersona(); ">
+    <!-- (submit)="$event.preventDefault(); aniadirPersona(nombre.value, apellido.value, edad.value, password.value)"-->
+    <table>
+        <tr>
+            <td><label for="nombre"></label></td>
+            <td><input type="text" #nombre [(ngModel)]="per.nombre" name="nombre">Nombre</td>
+        </tr>
+
+        <tr>
+            <td><label for="apellido"></label></td>
+            <td><input type="text" #apellido  [(ngModel)]="per.apellido" name="apellido">Apellido</td>
+        </tr>
+
+        <tr>
+            <td><label for="edad" ></label></td>
+            <td><input type="text" #edad  [(ngModel)]="per.edad" name="edad">Edad</td>
+        </tr>
+
+        <tr>
+            <td><label for="password" ></label></td>
+            <td><input type="text" #password  [(ngModel)]="per.password" name="password">Password</td>
+        </tr>
+
+        <tr>
+            <td> <button id="enviar" type="submit">Enviar</button></td>
+        </tr>
+
+    </table>
+</form>
+
+
+<div *ngIf="!isEmpty()">
+    <div *ngFor="let per of personas">
+        <h2>{{per.nombreCompleto()}}</h2>
+        <span>{{per.mostrarInfo()}}</span>
+    </div>
+
+</div>
+
+<a routerLink="/home">Inicio</a>

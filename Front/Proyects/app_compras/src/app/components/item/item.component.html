@@ -1,0 +1,24 @@
+<div class="row" [ngClass]="{'completed': item.completed }"> <!--va a aplicarle la clase completed a los items que tengan la propiedad completed en verdaderas-->
+    <div class="title">
+        <input type="checkbox" [checked]="item.completed" (change)="onToggle(item)"> <!--para poder marcarlo como pagado, anulandolo asi del total final. va a tener en cuenta
+        si cuando lo declare quedo en true o false a la prop completed-->
+        {{item.title}}
+    </div>
+
+    <div class="price">
+        {{item.price |currency}} <!--para que le agregue el simobolo $ por delante, el | me permite meterle esa funcion-->
+    </div>
+
+    <div class="quantity">
+        {{item.quantity}}
+    </div>
+
+    <div class="total">
+        {{ (item.price* item.quantity) |currency}}  
+    </div>
+
+    <div class="actions">
+        <button (click)="onDelete(item)">Eliminar</button> <!-- para cancelar, borrando el item, el metodo onDelete lo defino en el componente item -->
+    </div>
+
+</div>

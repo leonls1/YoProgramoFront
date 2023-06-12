@@ -1,0 +1,20 @@
+form{
+    margin:0 auto;
+    width:  300px ;
+    display: block;
+}
+
+form div{
+    padding: 5px 0; /*space between elements*/
+}
+
+form label{
+    display: block; /*labels will be over the input blocks*/
+    padding: 10px 0;
+    
+}
+
+form input[type=text]{
+    width: 100%; /*using the same space as the container*/
+    padding: 5px;
+}
