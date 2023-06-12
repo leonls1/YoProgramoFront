@@ -101,7 +101,7 @@ public class ProductController {
             return new ResponseEntity(new Message("El nombre es de un producto con otro id"),HttpStatus.BAD_REQUEST);
         }
         Product productToEdit = service.getOne(id).get();
-        productToEdit.setName(productDto.getName() );
+        productToEdit.setName   (productDto.getName() );
         productToEdit.setPrice(productDto.getPrice());
         productToEdit.setExpirationDate(productDto.getExpirationDate());
         productToEdit.setType(productDto.getType());
