@@ -11,6 +11,9 @@ import { ProyectListComponent } from './components/proyect-list/proyect-list.com
 import { ProyectNewComponent } from './components/proyect-new/proyect-new.component';
 import { ProyectEditComponent } from './components/proyect-edit/proyect-edit.component';
 
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { ProyectEditComponent } from './components/proyect-edit/proyect-edit.com
     AppRoutingModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
