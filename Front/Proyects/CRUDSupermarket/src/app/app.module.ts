@@ -13,6 +13,10 @@ import { ProyectEditComponent } from './components/proyect-edit/proyect-edit.com
 
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductNewComponent } from './components/product-new/product-new.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -20,7 +24,11 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     ProyectListComponent,
     ProyectNewComponent,
-    ProyectEditComponent
+    ProyectEditComponent,
+    ProductListComponent,
+    ProductEditComponent,
+    ProductNewComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

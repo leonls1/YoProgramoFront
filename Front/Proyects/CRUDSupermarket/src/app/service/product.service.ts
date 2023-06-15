@@ -12,7 +12,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  public getProduct(): Observable<Product[]>{
+  public getProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(this.URLBase + 'list');
   }
 
