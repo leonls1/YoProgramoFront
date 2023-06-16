@@ -8,7 +8,7 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  URLBase: String = 'https://localhost:8080/product/';
+  URLBase: String = 'http://localhost:8080/product/';
 
   constructor(private http: HttpClient) { }
 

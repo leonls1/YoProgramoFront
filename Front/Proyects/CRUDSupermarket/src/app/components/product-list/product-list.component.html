@@ -4,9 +4,10 @@
         <th scope="col">Id</th>
         <th scope="col">Nombre</th>
         <th scope="col">Precio</th>
-        <th scope="col">Fecha de vencimiento</th>
+
         <th scope="col">Tipo</th>
         <th scope="col">Acciones</th>
+
         
       </tr>
     </thead>
@@ -14,9 +15,12 @@
       <tr *ngFor="let product of products">
         <td>{{product.id}}</td>
         <td>{{product.name}}</td>
-        <td>@{{product.price}}</td>
+        <td>${{product.price}}</td>
         <!--<td>@{{product.expirationDate}}</td>-->
-        <td>@{{product.type}}</td>
+        <td>{{product.type}}</td>
+        <td><button class="btn btn-outline-info" routerLink="/detail/{{product.id}}">Ver</button></td>
+        <td><button class="btn btn-outline-warning" routerLink="/edit/{{product.id}}">editar</button></td>
+        <td><button class="btn btn-outline-danger" (click)="deleteProduct(product.id)">borrar</button></td>
       </tr>
      
     </tbody>
