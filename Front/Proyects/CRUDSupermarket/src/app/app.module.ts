@@ -7,10 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
-import { ProyectListComponent } from './components/proyect-list/proyect-list.component';
-import { ProyectNewComponent } from './components/proyect-new/proyect-new.component';
-import { ProyectEditComponent } from './components/proyect-edit/proyect-edit.component';
-
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProductListComponent } from './components/product-list/product-list.component';
@@ -22,9 +18,6 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 @NgModule({
   declarations: [
     AppComponent,
-    ProyectListComponent,
-    ProyectNewComponent,
-    ProyectEditComponent,
     ProductListComponent,
     ProductEditComponent,
     ProductNewComponent,
