@@ -5,6 +5,7 @@ package com.CV.BackEnd.Security;
 
 import com.CV.BackEnd.Security.Jwt.JwtEntryPoint;
 import com.CV.BackEnd.Security.Jwt.JwtTokenFilter;
+import com.CV.BackEnd.Security.Service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,12 +27,15 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 //si no ingresaste anteriormente
 public class MainSecurity {
     
-
-    
     @Autowired
     JwtEntryPoint jwtEntryPoint;
     
+    @Autowired
+    UserDetailsImpl userDetailsServiceImpl;
+
+    
     @Bean
+    
     public JwtTokenFilter jwtTokenFilter2(){
         return new JwtTokenFilter();
     }
@@ -46,8 +50,10 @@ public class MainSecurity {
             throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
+    
+  
 
-    @Bean
+     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint).and()
@@ -56,7 +62,7 @@ public class MainSecurity {
                 .requestMatchers("/**").permitAll()
                 .anyRequest().authenticated();
 
-        http.addFilterBefore(jwtTokenFilter2(), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(new JwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
