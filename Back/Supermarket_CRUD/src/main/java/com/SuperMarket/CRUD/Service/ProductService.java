@@ -90,5 +90,20 @@ public class ProductService implements IProductService{
         repo.deleteById(id);
     }
 
+    @Override
+    public Optional<Product> getOne(Long id) {
+        return repo.findById(id);
+    }
+
+    @Override
+    public void save(Product product) {
+        repo.save(product);
+    }
+
+    @Override
+    public void delete(Long id) {
+        repo.deleteById(id);
+    }
+
     
 }
