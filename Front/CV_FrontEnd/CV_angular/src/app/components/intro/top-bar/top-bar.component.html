@@ -6,8 +6,14 @@
             <a href="https://github.com/leonls1?tab=repositories" ><img src="../../../../assets/icons/github.png" alt="github" class="img-icon img-fluid"></a>
             <a href="https://www.linkedin.com/in/sasha-leon-alexis-lederhos-sturich-1500661a3/" ><img src="../../../../assets/icons/linkedin.png" alt="Linkedin" class="img-icon img-fluid"></a>
         </div>
-        <div class="col-1 offset-3 d-flex LogIn">
-           <button type="button" class="btn btn-outline-light" (click)="login()">Ingresar</button>
+        <div class="col-3 offset-5 d-flex LogIn">
+            <span *ngIf="!loggedIn">
+                <button type="button" class="btn btn-outline-light" (click)="login()">Ingresar</button>
+            </span>
+            <span *ngIf="loggedIn">
+                <button type="button" class="btn btn-outline-light" (click)="logOut()">Cerrar sesion</button>           
+            </span>
+           
         </div>
     </div>
  

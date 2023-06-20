@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/models/Experience.model';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 import { ExperienceService } from 'src/app/service/experience.service';
 
 @Component({
@@ -8,9 +9,11 @@ import { ExperienceService } from 'src/app/service/experience.service';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent implements OnInit{
-  experiencias: Experience[] = [];
 
-  constructor(private service: ExperienceService){}
+  experiencias: Experience[] = [];
+  loggedIn: boolean = false;
+
+  constructor(private service: ExperienceService, private auth:AuthenticationService){}
   
   ngOnInit(): void {
    this.cargarExperience();
@@ -19,6 +22,7 @@ export class ExperienceComponent implements OnInit{
 
   cargarExperience():void{
     this.service.traerExperiencias().subscribe(data=>this.experiencias = data); 
+    this.loggedIn = this.auth.isLoggedIn();
   }
 
   onEdit():void{}

@@ -12,8 +12,7 @@ import { NewProyectComponent } from './components/proyects/new-proyect/new-proye
 import { EditProyectComponent } from './components/proyects/edit-proyect/edit-proyect.component';
 
 const routes: Routes = [
-  {path: '', component:HomeComponent},
-  {path: '', redirectTo: '', pathMatch: 'full'},
+  {path: '', component:HomeComponent},  
   {path:'login', component:LoginComponent},
   {path:'nuevaExperiencia', component:NewExpComponent},
   {path:'editarExperiencia/:id', component:EditExpComponent},
@@ -22,7 +21,8 @@ const routes: Routes = [
   {path:'nuevoSkill', component:NewSkillComponent},
   {path:'editarSkill/:id', component:EditSkillComponent},
   {path:'editarProyecto/:id', component: EditProyectComponent},
-  {path:'nuevoProyecto', component: NewProyectComponent}];
+  {path:'nuevoProyecto', component: NewProyectComponent},
+  {path: '', redirectTo: '', pathMatch: 'full'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
