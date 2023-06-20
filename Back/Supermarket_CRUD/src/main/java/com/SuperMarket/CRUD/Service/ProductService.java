@@ -46,7 +46,7 @@ public class ProductService implements IProductService{
                 .orElseThrow(()->new ResourceNotFoundException("No se ha encontrado el producto con el id "+ id));
          
         pro.setName(product.getName());
-        pro.setExpirationDate(product.getExpirationDate());
+        //pro.setExpirationDate(product.getExpirationDate());
         pro.setPrice(product.getPrice());
         pro.setType(product.getType());
         
@@ -72,7 +72,7 @@ public class ProductService implements IProductService{
 
     @Override
     public boolean existByName(String name) {
-       return repo.existByName(name);
+       return repo.existsByName(name);
     }
 
     @Override

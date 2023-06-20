@@ -7,7 +7,7 @@ package com.SuperMarket.CRUD.Controller;
 import com.SuperMarket.CRUD.DTO.Message;
 import com.SuperMarket.CRUD.DTO.ProductDto;
 import com.SuperMarket.CRUD.Entity.Product;
-import com.SuperMarket.CRUD.Service.IProductService;
+import com.SuperMarket.CRUD.Service.ProductService;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/product")
-@CrossOrigin(origins = "http//localhost:4200")
+//@CrossOrigin(origins = "http//localhost:4200/")
+@CrossOrigin("http://localhost:4200/")
+
 public class ProductController {
     
     @Autowired
-    IProductService service;
+    ProductService service;
     
     
     @GetMapping("/list")
@@ -39,7 +41,7 @@ public class ProductController {
     }
     
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Product> getOne(@PathVariable Long id){
+    public ResponseEntity<Product> getById(@PathVariable Long id){
         if(!service.existById(id)){
             return new ResponseEntity(new Message("no existe"), HttpStatus.NOT_FOUND); //si no lo encuentra por el id me devuelve el error y el estado de not found
         }
@@ -49,8 +51,9 @@ public class ProductController {
         return new ResponseEntity(product, HttpStatus.OK);
     }
     
+    
     @GetMapping("/detailName/{name}")
-    public ResponseEntity<Product> getOne(@PathVariable String name){
+    public ResponseEntity<Product> getByName(@PathVariable String name){
         if(!service.existByName(name)){
             return new ResponseEntity(new Message("no existe"), HttpStatus.NOT_FOUND); //si no lo encuentra por el id me devuelve el error y el estado de not found
         }
@@ -77,7 +80,7 @@ public class ProductController {
             return new ResponseEntity(new Message("El producto con ese nombre ya existe"),HttpStatus.BAD_REQUEST);
         }
         //instanciacion del producto
-        Product product = new Product(productDto.getPrice(), productDto.getName(), productDto.getExpirationDate(), productDto.getType());
+        Product product = new Product(productDto.getName(),productDto.getPrice(), productDto.getType()/* productDto.getExpirationDate()*/ );
         //guardando el producto
         service.save(product);
         return new ResponseEntity(new Message("Producto Creado"),HttpStatus.OK);
@@ -101,9 +104,9 @@ public class ProductController {
             return new ResponseEntity(new Message("El nombre es de un producto con otro id"),HttpStatus.BAD_REQUEST);
         }
         Product productToEdit = service.getOne(id).get();
-        productToEdit.setName   (productDto.getName() );
+        productToEdit.setName(productDto.getName() );
         productToEdit.setPrice(productDto.getPrice());
-        productToEdit.setExpirationDate(productDto.getExpirationDate());
+        //productToEdit.setExpirationDate(productDto.getExpirationDate());
         productToEdit.setType(productDto.getType());
         
         service.update(id, productToEdit);

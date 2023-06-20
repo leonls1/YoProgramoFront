@@ -4,51 +4,41 @@
  */
 package com.SuperMarket.CRUD.Entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
 import java.util.Date;
 import lombok.Data;
 
-/**
- *
- * @author leon
- */
 @Entity
+@Table(name = "product")
 @Data
-@Table (name = "super_market")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)        
+    private Long id ;
     
-    @Column(name = "price")
-    private float price;
-    
-    @Column(name = "name")
     private String name;
     
-    @Column(name = "expirationDate")
-    private Date expirationDate;
+    private float price;
     
-    @Column(name = "type")
     private int type;
+    
+   // private LocalDate expirationDate;
 
     public Product() {
     }
 
-    public Product(float price, String name, Date expirationDate, int type) {
-        this.price = price;
+    public Product(String name, float price, int type) {
         this.name = name;
-        this.expirationDate = expirationDate;
+        this.price = price;
         this.type = type;
+        //this.expirationDate = expirationDate;
     }
-    
-    
-    
-    
-    
+            
+  
+       
 }

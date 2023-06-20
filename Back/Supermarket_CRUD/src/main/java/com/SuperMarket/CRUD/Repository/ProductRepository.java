@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
 public interface ProductRepository extends JpaRepository<Product, Long>{
     Optional<Product> findByName(String name); //buscar un producto en base al nombre recibido
     
-    boolean existByName(String name); //verificar si un producto existe
+    boolean existsByName(String nombre); //verificar si un producto existe
 }
