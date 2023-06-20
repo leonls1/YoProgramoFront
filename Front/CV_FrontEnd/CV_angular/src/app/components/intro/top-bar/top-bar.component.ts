@@ -23,7 +23,8 @@ export class TopBarComponent implements OnInit{
   }
 
   logOut(){
-    this.auth.logout();
+    this.auth.logout();   
     this.loggedIn = false;
+    location.reload()
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Education } from 'src/app/models/Education.model';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 import { EducationService } from 'src/app/service/education.service';
 @Component({
   selector: 'app-education',
@@ -9,7 +10,9 @@ import { EducationService } from 'src/app/service/education.service';
 export class EducationComponent implements OnInit{
 
   educaciones : Education[] =[];
-  constructor( private service: EducationService){}
+  loggedIn: boolean = false;
+
+  constructor( private service: EducationService, private auth:AuthenticationService){}
   
   
   ngOnInit(): void {
@@ -20,6 +23,7 @@ export class EducationComponent implements OnInit{
   traerEducaciones():void{
     this.service.bringEducations().subscribe(response =>
       this.educaciones = response)
+    this.loggedIn = this.auth.isLoggedIn();
   }
 
   onDelete(id?:number):void{

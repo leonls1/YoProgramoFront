@@ -1,7 +1,7 @@
 <div class="row">
     <h2>Proyectos realizados</h2>
     <div class="col-lg-2">
-        <button type="button" class="btn btn-dark" routerLink="/nuevoProyecto">Agregar proyecto</button>
+        <button type="button" class="btn btn-dark" routerLink="/nuevoProyecto"  *ngIf="loggedIn">Agregar proyecto</button>
     </div>
     <div class="row" *ngFor="let proyect of proyectList">
         <div class="row">
@@ -12,13 +12,13 @@
             </div>
 
             <div class="col-md-3 offset-5 ">
-                <button class="btn btn-secondary" 
+                <button class="btn btn-secondary"   *ngIf="loggedIn"
                 style="margin-right: 5px;"
                 routerLink="/editarProyecto/{{proyect.id}}"
                 > <i class="bi bi-pencil"></i>
                 Editar
                 </button>
-                <button class="btn btn-danger"
+                <button class="btn btn-danger"  *ngIf="loggedIn"
                 (click)="onDelete(proyect.id)"
                 ><i class="bi bi-trash"></i>
                 Eliminar</button>

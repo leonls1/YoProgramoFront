@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h2>Habilidades</h2>
     <div class="col-lg-2">
-        <button type="button" class="btn btn-dark" routerLink="/nuevoSkill">Agregar habilidad</button>
+        <button type="button" class="btn btn-dark" routerLink="/nuevoSkill"  *ngIf="loggedIn">Agregar habilidad</button>
     </div>
 
     <h3 class="offset-1">Hard Skills</h3>
@@ -12,10 +12,10 @@
                     [showSubtitle]="false" [showUnits]="false" backgroundColor="#3C4581" outerStrokeColor="#81783C"
                     titleColor="white" [showInnerStroke]="false"></circle-progress>
 
-                <td><button class="btn btn-secondary" style="margin-right: 5px;" routerLink="/editarSkill/{{skill.id}}"> <i
+                <td *ngIf="loggedIn"><button class="btn btn-secondary" style="margin-right: 5px;" routerLink="/editarSkill/{{skill.id}}"> <i
                             class="bi bi-pencil "></i>
                     </button></td>
-                <td><button class="btn btn-danger " (click)="onDelete(skill.id)"><i class="bi bi-trash "></i>
+                <td *ngIf="loggedIn"><button class="btn btn-danger " (click)="onDelete(skill.id)"><i class="bi bi-trash "></i>
                     </button></td>
             </div>
         </div>
@@ -30,10 +30,10 @@
                     [showUnits]="false" [showSubtitle]="false" backgroundColor="#3DDAB8" outerStrokeColor="#DA3D5F"
                     titleColor="white" [showInnerStroke]="false"></circle-progress>
 
-                <td><button class="btn btn-secondary" style="margin-right: 5px;" routerLink="/editarSkill/{{skill.id}}"> <i
+                <td *ngIf="loggedIn"><button class="btn btn-secondary" style="margin-right: 5px;" routerLink="/editarSkill/{{skill.id}}"> <i
                             class="bi bi-pencil "></i>
                     </button></td>
-                <td><button class="btn btn-danger " (click)="onDelete(skill.id)"><i class="bi bi-trash "></i>
+                <td *ngIf="loggedIn"><button class="btn btn-danger " (click)="onDelete(skill.id)"><i class="bi bi-trash "></i>
                     </button></td>
             </div>
         </div>
