@@ -7,7 +7,7 @@ package com.SuperMarket.CRUD.Controller;
 import com.SuperMarket.CRUD.DTO.Message;
 import com.SuperMarket.CRUD.DTO.ProductDto;
 import com.SuperMarket.CRUD.Entity.Product;
-import com.SuperMarket.CRUD.Service.IProductService;
+import com.SuperMarket.CRUD.Service.ProductService;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/product")
-@CrossOrigin(origins = "http//localhost:4200")
+//@CrossOrigin(origins = "http//localhost:4200/")
+@CrossOrigin("http://localhost:4200/")
+
 public class ProductController {
     
     @Autowired
-    IProductService service;
+    ProductService service;
     
     
     @GetMapping("/list")

@@ -16,15 +16,15 @@ public class ProductDto {
     @NotBlank
     private String name;
     
-    private Date expirationDate;
+   // private Date expirationDate;
     
     private int type;
 
-    public ProductDto(Float price, String name, Date expirationDate, int type) {
+    public ProductDto(Float price, String name,  int type) {
         this.price = price;
-        this.name = name;
-        this.expirationDate = expirationDate;
+        this.name = name;        
         this.type = type;
+        //this.expirationDate = expirationDate;
     }
 
     

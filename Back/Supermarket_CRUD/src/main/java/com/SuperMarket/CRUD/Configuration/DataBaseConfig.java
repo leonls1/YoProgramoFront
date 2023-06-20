@@ -26,7 +26,7 @@ public class DataBaseConfig {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource(); //creando la intancia donde tendre los datos de mi DB y su conexion
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver"); //el driver que utilizare para conectarme con la DB
-        dataSource.setUrl("jdbc:mysql://localhost:3306/Curriculum");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/super_market");
         dataSource.setUsername("Leon"); //el usuario de mi DB
         dataSource.setPassword("yoProgramo");
         return dataSource;
@@ -36,7 +36,7 @@ public class DataBaseConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("com.CV.BackEnd.Entity");
+        em.setPackagesToScan("com.SuperMarket.CRUD.Entity");
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(hibernateProperties());
