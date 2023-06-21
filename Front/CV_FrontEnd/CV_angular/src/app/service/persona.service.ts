@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class PersonaService {
 
-  private URLBase = 'http://localhost:8080/CV/V1/personas';
+  private URLBase = 'https://backendlls.onrender.com/CV/V1/personas';
 
   constructor(private httpCliet :HttpClient) { }
 

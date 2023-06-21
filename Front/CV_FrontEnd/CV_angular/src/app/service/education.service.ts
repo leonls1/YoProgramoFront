@@ -8,7 +8,7 @@ import { Education } from '../models/Education.model';
 })
 export class EducationService {
 
-  eduURL = 'http://localhost:8080/CV/V1/edu';
+  eduURL = 'https://backendlls.onrender.com/CV/V1/edu';
   constructor(private httpClient: HttpClient) { }
 
   public bringEducations():Observable<Education[]>{

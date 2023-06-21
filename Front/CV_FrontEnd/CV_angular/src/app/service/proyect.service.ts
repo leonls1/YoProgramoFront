@@ -8,7 +8,7 @@ import { Proyect } from '../models/Proyect.model';
 })
 export class ProyectService {
 
-  baseUrl: string = "http://localhost:8080/CV/V1/pro/"
+  baseUrl: string = "https://backendlls.onrender.com/CV/V1/pro/"
 
   constructor(private http: HttpClient) { }
 
