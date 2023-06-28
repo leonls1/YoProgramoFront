@@ -1,27 +1,28 @@
 <div class="container" *ngIf="skill">
     <div class="row">
         <div>
-            <form action="" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <form action="" (ngSubmit)="onUpdate()"  #f="ngForm">
                 <div class="form-group">
                     <label for="nombreExp">Nombre de la Habilidad</label>
-                    <input type="text" class="form-control" id="nombreSkill" name="nombre"  [(ngModel)]="skill.nombre">
+                    <input type="text" class="form-control" id="nombreSkill" name="nombre"  [(ngModel)]="skill.nombre" required minlength="" maxlength="">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Porcentaje %</label>
-                    <input type="number" class="form-control" id="Porcentaje"name="porcentaje" [(ngModel)]="skill.porcentaje">
+                    <input type="number" class="form-control" id="Porcentaje"name="porcentaje" [(ngModel)]="skill.porcentaje" required>
                     
                 </div>
 
                 <div class="form-group">
                     <label for="rol">Tipo de habilidad</label> <br>
-                    <input type="radio" id="blanda" name="tipo" value=true [(ngModel)]="skill.tipo">
+                    <input type="radio" id="blanda" name="tipo" value=true [(ngModel)]="skill.tipo" >
                     <label for="blanda"> Blanda</label><br>
                     
                     <input type="radio" id="dura" name="tipo" value=false [(ngModel)]="skill.tipo">
                     <label for="dura"> Dura</label>
                 </div>
-
+            
                 <button class="btn btn-primary">Actualizar Habilidad </button>
+                <input type="submit" value="Enviarrrr" [disabled]="f.invalid">
             </form>
         </div>
     </div>

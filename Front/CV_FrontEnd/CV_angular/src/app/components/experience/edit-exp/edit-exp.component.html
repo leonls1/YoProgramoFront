@@ -1,32 +1,44 @@
 <div class="container" *ngIf="exp">
     <div class="row">
         <div>
-            <form action="" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <form action="" (ngSubmit)="onUpdate()"  #f="ngForm">
                 <div class="form-group">
                     <label for="nombreExp">Nombre de la empresa</label>
-                    <input type="text" class="form-control" id="nombreExp" name="nombre" [(ngModel)]="exp.nombreEmpresa">
+                    <input type="text" class="form-control" id="nombreExp" name="nombre" [(ngModel)]="exp.nombreEmpresa" required minlength="3" maxlength="20">
+                    <div  *ngIf="f.controls['nombre'].touched && f.controls['nombre'].invalid" >
+                        <div *ngIf="f.controls['nombre']?.hasError('required')" class="invalid_field"> El nombre es requerido</div>
+                        <div *ngIf="f.controls['nombre']?.hasError('minlength')" class="invalid_field"> El nombre debe tener entre 3 y 20 caracteres</div>
+                    </div>
+
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
-                    <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="exp.descripcion">
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="exp.descripcion" required minlength="3" >
+                    <div  *ngIf="f.controls['descripcion'].touched && f.controls['descripcion'].invalid" >
+                        <div *ngIf="f.controls['descripcion']?.hasError('required')" class="invalid_field"> La descripcion es requerido</div>
+                        <div *ngIf="f.controls['descripcion']?.hasError('minlength')" class="invalid_field">La descripcion debe tener al menos 3 caracteres </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="rol">Rol</label>
-                    <input type="text" class="form-control" id="rol" name="rol" [(ngModel)]="exp.rol">
+                    <input type="text" class="form-control" id="rol" name="rol" [(ngModel)]="exp.rol" required minlength="3" maxlength="20">
+                    <div  *ngIf="f.controls['rol'].touched && f.controls['rol'].invalid" >
+                        <div *ngIf="f.controls['rol']?.hasError('required')" class="invalid_field"> El rol es requerido</div>
+                        <div *ngIf="f.controls['rol']?.hasError('minlength')" class="invalid_field">La rol debe tener al menos 3 caracteres </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="rol">Fecha Inicio</label>
-                    <input type="text" class="form-control" id="fechaInicio" name="fechaInicio" [(ngModel)]="exp.fechaInicio">
+                    <input type="text" class="form-control" id="fechaInicio" name="fechaInicio" [(ngModel)]="exp.fechaInicio" required>
                 </div>
 
                 <div class="form-group">
                     <label for="rol">Fecha Fin</label>
-                    <input type="text" class="form-control" id="fechaFin" name="fechaFin" [(ngModel)]="exp.fechaFin">
+                    <input type="text" class="form-control" id="fechaFin" name="fechaFin" [(ngModel)]="exp.fechaFin" required>
                 </div>
-
-                <button class="btn btn-primary">Actualizar experiencia</button>
+                <input type="submit" value="Actualizar experiencia" [disabled]="f.invalid">
 
 
             </form>

@@ -20,7 +20,7 @@ export class EditSkillComponent implements OnInit {
    this.service.obtenerHabilidadPorId(id).subscribe(response=>
     this.skill = response,
     error =>{
-      alert("No se ha podido cargar la habilidad");
+      console.log("No se ha podido cargar la habilidad");
       this.router.navigate(['']);
     })
   }
@@ -28,10 +28,10 @@ export class EditSkillComponent implements OnInit {
   onUpdate():void{
     const id:number = this.route.snapshot.params['id'];
     this.service.actualizarHabilidad(id, this.skill).subscribe(response=>{
-      alert("Habilidad actualizada");
+      console.log("Habilidad actualizada");
       this.router.navigate(['']);
     },error=>{
-      alert("No se ha podido editar la habilida");
+      console.log("No se ha podido editar la habilida");
       this.router.navigate(['']);
     })
   }
