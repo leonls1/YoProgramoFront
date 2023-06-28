@@ -14,6 +14,7 @@ import { PrototipoListaContactosComponent } from './components/lista-contactos-v
 import { HomeComponent } from './components/home/home.component';
 import { ListaContactosV2Component } from './components/lista-contactos-v2/lista-contactos-v2.component';
 import { ListaCrudComponent } from './components/lista-crud/lista-crud.component';
+import { FormularioConValidacionComponent } from './components/formulario-con-validacion/formulario-con-validacion.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ListaCrudComponent } from './components/lista-crud/lista-crud.component
     PrototipoListaContactosComponent,
     HomeComponent,
     ListaContactosV2Component,
-    ListaCrudComponent
+    ListaCrudComponent,
+    FormularioConValidacionComponent
   ],
   imports: [
     BrowserModule,

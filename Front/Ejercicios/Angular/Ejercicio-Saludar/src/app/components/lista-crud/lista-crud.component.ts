@@ -41,4 +41,8 @@ export class ListaCrudComponent {
 
   }
 
+  submitForm(){
+    
+  }
+
 }

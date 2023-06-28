@@ -1,0 +1,32 @@
+<p>Formulario</p>
+<form (ngSubmit)="EnviarFormulario()" #MiFormulario="ngForm" target="_self">
+    <label for="nombre">Nombre</label>
+    <input type="text" required name="name" [(ngModel)]="nombre" maxlength="12" minlength="4">
+    <div  *ngIf="MiFormulario.controls['name'].touched && MiFormulario.controls['name'].invalid" >
+        <div *ngIf="MiFormulario.controls['name']?.hasError('required') "> El nombre es requerido</div>
+        <div *ngIf="MiFormulario.controls['name']?.hasError('minlength')"> El nombre debe tener al menos 4 caracteres</div>
+    </div>
+    <br>
+
+    <label for="email">Email</label>
+    <input type="email" required name="email" [(ngModel)]="email" maxlength="50" minlength="4" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+    <div  *ngIf="MiFormulario.controls['email'].touched && MiFormulario.controls['email'].invalid" >
+        <div *ngIf="MiFormulario.controls['email']?.hasError('required') "> El nombre es requerido</div>
+        <div *ngIf="MiFormulario.controls['email']?.hasError('minlength')"> El nombre debe tener al menos 4 caracteres</div>
+        <div *ngIf="MiFormulario.controls['email']?.hasError('pattern')"> Tiene que tener al menos un '@' y un '.'</div>
+    </div>
+    <br>
+
+    <label for="nombre">Contraseña</label>
+    <input type="password" required name="contrasenia" [(ngModel)]="contrasenia" maxlength="12" minlength="5">
+    <div  *ngIf="MiFormulario.controls['contrasenia'].touched && MiFormulario.controls['contrasenia'].invalid" >
+        <div *ngIf="MiFormulario.controls['contrasenia']?.hasError('required') "> La contraseña es requerida</div>
+        <div *ngIf="MiFormulario.controls['contrasenia']?.hasError('minlength')"> La contraseña debe tener entre 5 y 12 caracteres</div>
+    </div>
+    <br>
+    
+    <input type="submit" value="Enviarrrr" [disabled]="MiFormulario.invalid">
+    
+</form>
+
+
