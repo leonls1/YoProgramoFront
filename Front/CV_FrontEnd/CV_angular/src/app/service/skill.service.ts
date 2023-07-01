@@ -7,9 +7,9 @@ import { Skill } from '../models/Skill.model';
   providedIn: 'root',
 })
 export class SkillService {
-  //private baseURL = 'https://backendlls.onrender.com/CV/V1/habilidades';
+  private baseURL = 'https://backendlls.onrender.com/CV/V1/habilidades';
   //link desarrollo
-  baseURL: string = 'http://localhost:8080/CV/V1/habilidades';
+  //baseURL: string = 'http://localhost:8080/CV/V1/habilidades';
 
   private crearURL = this.baseURL + '/crear';
   private buscarURL = this.baseURL + '/buscar';
