@@ -1,33 +1,45 @@
 <div class="container">
     <div class="row" *ngIf="edu">
         <div>
-            <form action="" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <form action="" (ngSubmit)="onUpdate()"  #f="ngForm">
                 <div class="form-group">
                     <label for="place">Nombre de la institucion</label>
-                    <input type="text" class="form-control" id="place" name="place" [(ngModel)]="edu.place">
+                    <input type="text" class="form-control" id="place" name="place" [(ngModel)]="edu.place" required minlength="3" maxlength="30">
+                    <div *ngIf="f.controls['place'].touched && f.controls['place'].invalid" class="alert alert-danger">
+                        <div *ngIf="f.controls['place'].hasError('required')">El nombre es requerido</div>
+                        <div *ngIf="f.controls['place'].hasError('minlength')">El nombre debe tener entre 3 y 30 caracteres</div>
+                    </div>  
                 </div>
                 <div class="form-group">
                     <label for="description">Descripcion</label>
-                    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="edu.description">
+                    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="edu.description" required minlength="3">
+                    <div *ngIf="f.controls['description'].touched && f.controls['description'].invalid" class="alert alert-danger">
+                        <div *ngIf="f.controls['description'].hasError('required')">El nombre es requerido</div>
+                        <div *ngIf="f.controls['description'].hasError('minlength')">la descripcion  debe tener al menos 3 caracteres</div>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="rol">Titulo</label>
-                    <input type="text" class="form-control" id="tittle" name="tittle" [(ngModel)]="edu.tittle">
+                    <input type="text" class="form-control" id="tittle" name="tittle" [(ngModel)]="edu.tittle" required minlength="3">
+                    <div *ngIf="f.controls['tittle'].touched && f.controls['tittle'].invalid" class="alert alert-danger">
+                        <div *ngIf="f.controls['tittle'].hasError('required')">El titulo es requerido</div>
+                        <div *ngIf="f.controls['tittle'].hasError('minlength')">El titulo debe tener al menos 3 caracteres</div>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="rol">Fecha Inicio</label>
-                    <input type="text" class="form-control" id="dateBegining" name="dateBegining" [(ngModel)]="edu.dateBegining">
+                    <input type="text" class="form-control" id="dateBegining" name="dateBegining" [(ngModel)]="edu.dateBegining" required>
                 </div>
 
                 <div class="form-group">
                     <label for="dateEnd">Fecha Fin</label>
-                    <input type="text" class="form-control" id="dateEnd" name="dateEnd" [(ngModel)]="edu.dateEnd">
+                    <input type="text" class="form-control" id="dateEnd" name="dateEnd" [(ngModel)]="edu.dateEnd" required>
                 </div>
 
-                <button class="btn btn-primary">Editar Educacion</button>
 
+                <input type="submit" value="Editar educacion" [disabled]="f.invalid" class="btn btn-primary">
 
             </form>
         </div>

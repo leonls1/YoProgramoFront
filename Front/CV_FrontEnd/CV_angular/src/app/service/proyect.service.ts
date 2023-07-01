@@ -8,8 +8,11 @@ import { Proyect } from '../models/Proyect.model';
 })
 export class ProyectService {
 
-  baseUrl: string = "https://backendlls.onrender.com/CV/V1/pro/"
+  //baseUrl: string = "https://backendlls.onrender.com/CV/V1/pro/"
+  //link desarrollo
+  baseUrl:string = 'http://localhost:8080/CV/V1/pro/'
 
+  
   constructor(private http: HttpClient) { }
 
   public getProyects():Observable<Proyect[]> {

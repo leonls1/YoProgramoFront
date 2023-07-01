@@ -6,15 +6,15 @@
                     <label for="nombreExp">Nombre de la Habilidad</label>
                     <input type="text" class="form-control" id="nombreSkill" name="nombre"  [(ngModel)]="nombre" required minlength="3" maxlength="12">
                     <div  *ngIf="f.controls['nombre'].touched && f.controls['nombre'].invalid" >
-                        <div *ngIf="f.controls['nombre']?.hasError('required')" class="invalid_field"> El nombre es requerido</div>
-                        <div *ngIf="f.controls['nombre']?.hasError('minlength')" class="invalid_field"> El nombre debe tener entre 3 y 12 caracteres</div>
+                        <div *ngIf="f.controls['nombre']?.hasError('required')" class="invalid_field alert "> El nombre es requerido</div>
+                        <div *ngIf="f.controls['nombre']?.hasError('minlength')" class="invalid_field alert"> El nombre debe tener entre 3 y 12 caracteres</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Porcentaje %</label>
                     <input type="number" class="form-control" id="Porcentaje"name="porcentaje" [(ngModel)]="porcentaje" required min="0" max="100">
                     <div  *ngIf="f.controls['porcentaje'].touched && f.controls['porcentaje'].invalid" >
-                        <div *ngIf="f.controls['porcentaje']?.hasError('required')" class="invalid_field"> El porcentaje es requerido</div>
+                        <div *ngIf="f.controls['porcentaje']?.hasError('required')" class="invalid_field alert"> El porcentaje es requerido</div>
                     </div>
                 </div>
 

@@ -8,7 +8,10 @@ import { Experience } from '../models/Experience.model';
 })
 export class ExperienceService {
 
-  expURL = 'https://backendlls.onrender.com/CV/V1/exp';
+  //expURL = 'https://backendlls.onrender.com/CV/V1/exp';
+
+  //link desarrollo
+  expURL = 'http://localhost:8080/CV/V1/exp'
   constructor(private httpClient: HttpClient) { }
 
   public traerExperiencias():Observable<Experience[]>{
